@@ -1,0 +1,20 @@
+PODS:
+  - CustomIOSAlertView (0.9.5)
+  - Shimmer (1.0.2)
+
+DEPENDENCIES:
+  - CustomIOSAlertView
+  - Shimmer
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - CustomIOSAlertView
+    - Shimmer
+
+SPEC CHECKSUMS:
+  CustomIOSAlertView: cc4fa8e36219be3fd5ebcd40789f5b4aaae0f38e
+  Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
+
+PODFILE CHECKSUM: 27adb4f2246398dd63e61284e0b1d8186be5b947
+
+COCOAPODS: 1.5.3

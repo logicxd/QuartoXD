@@ -1,0 +1,438 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		682EC084218EDB0F00F74903 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 682EC083218EDB0F00F74903 /* AppDelegate.m */; };
+		682EC08C218EDB1000F74903 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 682EC08B218EDB1000F74903 /* Assets.xcassets */; };
+		682EC092218EDB1000F74903 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 682EC091218EDB1000F74903 /* main.m */; };
+		682EC09D218EDCCF00F74903 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 682EC09C218EDCCF00F74903 /* MenuViewController.m */; };
+		682EC0A0218EDD0700F74903 /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 682EC09F218EDD0700F74903 /* MenuView.m */; };
+		682EC0A52190153900F74903 /* UIColor+QuartoColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 682EC0A42190153900F74903 /* UIColor+QuartoColor.m */; };
+		EF2A96C417EBCF75C2003586 /* Pods_QuartoXD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4D04211757E885067542CDB /* Pods_QuartoXD.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		682EC07F218EDB0F00F74903 /* QuartoXD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuartoXD.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		682EC082218EDB0F00F74903 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		682EC083218EDB0F00F74903 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		682EC08B218EDB1000F74903 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		682EC090218EDB1000F74903 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		682EC091218EDB1000F74903 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		682EC09B218EDCCF00F74903 /* MenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		682EC09C218EDCCF00F74903 /* MenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		682EC09E218EDD0700F74903 /* MenuView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuView.h; sourceTree = "<group>"; };
+		682EC09F218EDD0700F74903 /* MenuView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuView.m; sourceTree = "<group>"; };
+		682EC0A32190153900F74903 /* UIColor+QuartoColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+QuartoColor.h"; sourceTree = "<group>"; };
+		682EC0A42190153900F74903 /* UIColor+QuartoColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+QuartoColor.m"; sourceTree = "<group>"; };
+		88A34C3014394B0953805F1B /* Pods-QuartoXD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuartoXD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QuartoXD/Pods-QuartoXD.debug.xcconfig"; sourceTree = "<group>"; };
+		C4D04211757E885067542CDB /* Pods_QuartoXD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuartoXD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4A669C96886A70FB1CA6F8A /* Pods-QuartoXD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuartoXD.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuartoXD/Pods-QuartoXD.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		682EC07C218EDB0F00F74903 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF2A96C417EBCF75C2003586 /* Pods_QuartoXD.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		682EC076218EDB0F00F74903 = {
+			isa = PBXGroup;
+			children = (
+				682EC081218EDB0F00F74903 /* QuartoXD */,
+				682EC080218EDB0F00F74903 /* Products */,
+				9AD73B63A6DBE005DDB84720 /* Pods */,
+				BE1DC806BEB03F16BDFA04C8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		682EC080218EDB0F00F74903 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				682EC07F218EDB0F00F74903 /* QuartoXD.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		682EC081218EDB0F00F74903 /* QuartoXD */ = {
+			isa = PBXGroup;
+			children = (
+				682EC0A1218EE17500F74903 /* Assets */,
+				682EC099218EDC6200F74903 /* Archive */,
+				682EC0A2219014D600F74903 /* Categories */,
+				682EC098218EDC1400F74903 /* Menu */,
+				682EC082218EDB0F00F74903 /* AppDelegate.h */,
+				682EC083218EDB0F00F74903 /* AppDelegate.m */,
+			);
+			path = QuartoXD;
+			sourceTree = "<group>";
+		};
+		682EC098218EDC1400F74903 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				682EC09B218EDCCF00F74903 /* MenuViewController.h */,
+				682EC09C218EDCCF00F74903 /* MenuViewController.m */,
+				682EC09E218EDD0700F74903 /* MenuView.h */,
+				682EC09F218EDD0700F74903 /* MenuView.m */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		682EC099218EDC6200F74903 /* Archive */ = {
+			isa = PBXGroup;
+			children = (
+				682EC08B218EDB1000F74903 /* Assets.xcassets */,
+				682EC091218EDB1000F74903 /* main.m */,
+				682EC090218EDB1000F74903 /* Info.plist */,
+			);
+			path = Archive;
+			sourceTree = "<group>";
+		};
+		682EC0A1218EE17500F74903 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		682EC0A2219014D600F74903 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				682EC0A32190153900F74903 /* UIColor+QuartoColor.h */,
+				682EC0A42190153900F74903 /* UIColor+QuartoColor.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		9AD73B63A6DBE005DDB84720 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				88A34C3014394B0953805F1B /* Pods-QuartoXD.debug.xcconfig */,
+				F4A669C96886A70FB1CA6F8A /* Pods-QuartoXD.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BE1DC806BEB03F16BDFA04C8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C4D04211757E885067542CDB /* Pods_QuartoXD.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		682EC07E218EDB0F00F74903 /* QuartoXD */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 682EC095218EDB1000F74903 /* Build configuration list for PBXNativeTarget "QuartoXD" */;
+			buildPhases = (
+				EBD607802A134D37F0F89AE2 /* [CP] Check Pods Manifest.lock */,
+				682EC07B218EDB0F00F74903 /* Sources */,
+				682EC07C218EDB0F00F74903 /* Frameworks */,
+				682EC07D218EDB0F00F74903 /* Resources */,
+				E0C3AE8087FF8957AE68C4BD /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QuartoXD;
+			productName = QuartoXD;
+			productReference = 682EC07F218EDB0F00F74903 /* QuartoXD.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		682EC077218EDB0F00F74903 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Aung Moe";
+				TargetAttributes = {
+					682EC07E218EDB0F00F74903 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 682EC07A218EDB0F00F74903 /* Build configuration list for PBXProject "QuartoXD" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 682EC076218EDB0F00F74903;
+			productRefGroup = 682EC080218EDB0F00F74903 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				682EC07E218EDB0F00F74903 /* QuartoXD */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		682EC07D218EDB0F00F74903 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				682EC08C218EDB1000F74903 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E0C3AE8087FF8957AE68C4BD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-QuartoXD/Pods-QuartoXD-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CustomIOSAlertView/CustomIOSAlertView.framework",
+				"${BUILT_PRODUCTS_DIR}/Shimmer/Shimmer.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CustomIOSAlertView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Shimmer.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QuartoXD/Pods-QuartoXD-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EBD607802A134D37F0F89AE2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QuartoXD-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		682EC07B218EDB0F00F74903 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				682EC092218EDB1000F74903 /* main.m in Sources */,
+				682EC0A0218EDD0700F74903 /* MenuView.m in Sources */,
+				682EC0A52190153900F74903 /* UIColor+QuartoColor.m in Sources */,
+				682EC09D218EDCCF00F74903 /* MenuViewController.m in Sources */,
+				682EC084218EDB0F00F74903 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		682EC093218EDB1000F74903 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		682EC094218EDB1000F74903 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		682EC096218EDB1000F74903 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88A34C3014394B0953805F1B /* Pods-QuartoXD.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CQ47S6V855;
+				INFOPLIST_FILE = QuartoXD/Archive/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = aungmoe.QuartoXD;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		682EC097218EDB1000F74903 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4A669C96886A70FB1CA6F8A /* Pods-QuartoXD.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CQ47S6V855;
+				INFOPLIST_FILE = QuartoXD/Archive/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = aungmoe.QuartoXD;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		682EC07A218EDB0F00F74903 /* Build configuration list for PBXProject "QuartoXD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				682EC093218EDB1000F74903 /* Debug */,
+				682EC094218EDB1000F74903 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		682EC095218EDB1000F74903 /* Build configuration list for PBXNativeTarget "QuartoXD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				682EC096218EDB1000F74903 /* Debug */,
+				682EC097218EDB1000F74903 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 682EC077218EDB0F00F74903 /* Project object */;
+}

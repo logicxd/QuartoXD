@@ -9,84 +9,102 @@
 #import "MenuView.h"
 #import "FBShimmeringView.h"
 #import "../Categories/UIColor+QuartoColor.h"
+#import "../Categories/UIFont+QuartoFont.h"
 
-@implementation MenuView
+@interface MenuView()
 
-#pragma mark - Initialize
+@property (nonatomic, strong) UIStackView *stackView;
+@property (nonatomic, strong) UIView *viewA;
+@property (nonatomic, strong) UIView *viewB;
+
+@end
+
+@implementation MenuView {
+    BOOL _didSetupConstraints;
+}
+
+#pragma mark - Initialize View
 
 - (instancetype)init {
     if (self = [super init]) {
-        [self setupTitle];
+        [self setup];
     }
     return self;
+}
+
+- (void)setup {
+    // Set up properties of the view itself
+    _didSetupConstraints = NO;
+    self.translatesAutoresizingMaskIntoConstraints = NO;
+    self.clipsToBounds = YES;
+
+    // Set up subviews
+    [self setupStackview];
+    [self setupTitle];
+    
+    // Inform the constraints engine to update the constraints.
+    [self setNeedsUpdateConstraints];
+}
+
+- (void)setupStackview {
+    self.stackView = [[UIStackView alloc] init];
+    self.stackView.axis = UILayoutConstraintAxisVertical;
+    self.stackView.distribution = UIStackViewDistributionFillEqually;
+    self.stackView.alignment = UIStackViewAlignmentCenter;
+    self.stackView.spacing = 30;
+    self.stackView.translatesAutoresizingMaskIntoConstraints = NO;
+    self.stackView.backgroundColor = [UIColor blueColor];
+    self.stackView.alpha = 0.5f;
+    [self addSubview:self.stackView];
 }
 
 - (void)setupTitle {
     UILabel *title = [[UILabel alloc] init];
     title.text = @"QuartoXD";
     title.textAlignment = NSTextAlignmentCenter;
-//    title.font = [UIFont preferredFontForTextStyle:UIFontTextStyleTitle1];
-    title.font = [UIFont systemFontOfSize:40.0f];
+    title.font = [UIFont quartoTitle];
     title.textColor = [UIColor quartoWhite];
-    
-    self.titleShimmeringView = [[FBShimmeringView alloc] initWithFrame:CGRectZero];
+    title.translatesAutoresizingMaskIntoConstraints = NO;
+    // Test these on different devices.
+    title.minimumScaleFactor = 0.5;
+    title.adjustsFontSizeToFitWidth = YES;
+
+    self.titleShimmeringView = [[FBShimmeringView alloc] init];
     self.titleShimmeringView.contentView = title;
     self.titleShimmeringView.shimmeringSpeed = 80;
     self.titleShimmeringView.shimmeringPauseDuration = 0.50;
     self.titleShimmeringView.shimmering = YES;
-    
-    [self addSubview:self.titleShimmeringView];
+    self.titleShimmeringView.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.stackView addArrangedSubview:self.titleShimmeringView];
 }
 
 #pragma mark - Layouts
 
+//- (void)layoutSubviews {
+//    [super layoutSubviews];
+//}
+//
 //+ (BOOL)requiresConstraintBasedLayout {
 //    return YES;
 //}
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    
-}
-
 - (void)updateConstraints {
+//    if (_didSetupConstraints) {
+//        [super updateConstraints];
+//        return;
+//    }
     
-    // Title
-    UILayoutGuide *guide = self.layoutMarginsGuide;
+    UILayoutGuide *layoutMarginsGuide = self.layoutMarginsGuide;
+
+    [[self.stackView.topAnchor constraintEqualToAnchor:layoutMarginsGuide.topAnchor] setActive:YES];
+    [[self.stackView.leftAnchor constraintEqualToAnchor:layoutMarginsGuide.leftAnchor] setActive:YES];
+    [[self.stackView.rightAnchor constraintEqualToAnchor:layoutMarginsGuide.rightAnchor] setActive:YES];
+    [[self.stackView.bottomAnchor constraintEqualToAnchor:layoutMarginsGuide.bottomAnchor] setActive:YES];
     
-//    [[self.titleShimmeringView.centerXAnchor constraintEqualToAnchor:self.centerXAnchor constant:1.0] setActive:YES];
-//    [[self.titleShimmeringView.widthAnchor constraintEqualToAnchor:self.widthAnchor constant:1] setActive:YES];
-//    [[self.titleShimmeringView.heightAnchor constraintEqualToAnchor:self.heightAnchor constant:1] setActive:YES];
-    
-    [[self.centerXAnchor constraintEqualToAnchor:self.titleShimmeringView.centerXAnchor constant:1.0] setActive:YES];
-    [[self.topAnchor constraintEqualToAnchor:guide.topAnchor constant:1.0] setActive:YES];
-    [[self.bottomAnchor constraintEqualToAnchor:guide.bottomAnchor constant:1.0] setActive:YES];
-    
-//    [[self.titleShimmeringView.leadingAnchor constraintGreaterThanOrEqualToSystemSpacingAfterAnchor:margins.leadingAnchor multiplier:1.0] setActive:YES];
-//
-//    [[self.titleShimmeringView.trailingAnchor constraintGreaterThanOrEqualToSystemSpacingAfterAnchor:margins.trailingAnchor multiplier:1.0] setActive:YES];
-//
-//    [[self.titleShimmeringView.heightAnchor constraintEqualToAnchor:self.widthAnchor multiplier:0.5] setActive:YES];
-    
-//    [self.titleShimmeringView.superview addConstraint:[NSLayoutConstraint
-//                                                       constraintWithItem:self.titleShimmeringView.superview
-//                                                       attribute:NSLayoutAttributeCenterX
-//                                                       relatedBy:NSLayoutRelationEqual
-//                                                       toItem:self.titleShimmeringView
-//                                                       attribute:NSLayoutAttributeCenterX
-//                                                       multiplier:1
-//                                                       constant:0]];
-//
-//    [self.titleShimmeringView.superview addConstraint:[NSLayoutConstraint
-//                                                       constraintWithItem:self.titleShimmeringView.superview
-//                                                       attribute:NSLayoutAttributeCenterY
-//                                                       relatedBy:NSLayoutRelationEqual
-//                                                       toItem:self.titleShimmeringView
-//                                                       attribute:NSLayoutAttributeCenterY
-//                                                       multiplier:1
-//                                                       constant:0]];
-    
-    
+    [[self.titleShimmeringView.contentView.topAnchor constraintEqualToAnchor:self.titleShimmeringView.topAnchor] setActive:YES];
+    [[self.titleShimmeringView.contentView.leftAnchor constraintEqualToAnchor:self.titleShimmeringView.leftAnchor] setActive:YES];
+    [[self.titleShimmeringView.contentView.rightAnchor constraintEqualToAnchor:self.titleShimmeringView.rightAnchor] setActive:YES];
+    [[self.titleShimmeringView.contentView.bottomAnchor constraintEqualToAnchor:self.titleShimmeringView.bottomAnchor] setActive:YES];
     
     [super updateConstraints];
 }

@@ -8,8 +8,9 @@
 
 #import "MenuViewController.h"
 #import "MenuView.h"
+#import "UIColor+QuartoColor.h"
 
-@interface MenuViewController ()
+@interface MenuViewController()
 @end
 
 @implementation MenuViewController
@@ -22,7 +23,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.view.backgroundColor = [UIColor redColor];
+    self.view.backgroundColor = [UIColor quartoRed];
 }
 
 @end

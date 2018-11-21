@@ -7,7 +7,7 @@
 //
 
 #import "MenuView.h"
-#import "FBShimmeringView.h"
+#import <Shimmer/FBShimmeringView.h>
 #import "../Categories/UIColor+QuartoColor.h"
 #import "../Categories/UIFont+QuartoFont.h"
 
@@ -76,6 +76,14 @@
     self.titleShimmeringView.shimmering = YES;
     self.titleShimmeringView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.stackView addArrangedSubview:self.titleShimmeringView];
+}
+
+- (void)setupSinglePlayerButton {
+    self.singlePlayerButton = [[UIButton alloc] init];
+//    self.singlePlayerButton.titleLabel = @"Single";
+    self.singlePlayerButton.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.stackView addArrangedSubview:self.singlePlayerButton];
+    
 }
 
 #pragma mark - Layouts

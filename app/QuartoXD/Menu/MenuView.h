@@ -18,7 +18,6 @@ typedef NS_ENUM(NSInteger, MenuButtonType){
 
 // Forward declarations
 @class MenuView;
-@class FBShimmeringView;
 
 @protocol MenuViewDelegate <NSObject>
 - (void)buttonPressedSinglePlayer;
@@ -27,10 +26,10 @@ typedef NS_ENUM(NSInteger, MenuButtonType){
 @end
 
 @interface MenuView : UIView
+@property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UIButton *singlePlayerButton;
 @property (nonatomic, strong) UIButton *versusButton;
 @property (nonatomic, strong) UIButton *howToButton;
-@property (nonatomic, strong) FBShimmeringView *titleShimmeringView;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -14,6 +14,7 @@
 		682EC0A0218EDD0700F74903 /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 682EC09F218EDD0700F74903 /* MenuView.m */; };
 		682EC0A52190153900F74903 /* UIColor+QuartoColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 682EC0A42190153900F74903 /* UIColor+QuartoColor.m */; };
 		68C7551D2197B3A500F034B3 /* UIFont+QuartoFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C7551C2197B3A500F034B3 /* UIFont+QuartoFont.m */; };
+		D8B0F56021A951C1006F7600 /* UIButton+QuartoButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B0F55F21A951C1006F7600 /* UIButton+QuartoButton.m */; };
 		EF2A96C417EBCF75C2003586 /* Pods_QuartoXD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4D04211757E885067542CDB /* Pods_QuartoXD.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,8 @@
 		68C7551C2197B3A500F034B3 /* UIFont+QuartoFont.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIFont+QuartoFont.m"; sourceTree = "<group>"; };
 		88A34C3014394B0953805F1B /* Pods-QuartoXD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuartoXD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QuartoXD/Pods-QuartoXD.debug.xcconfig"; sourceTree = "<group>"; };
 		C4D04211757E885067542CDB /* Pods_QuartoXD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuartoXD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8B0F55E21A951C1006F7600 /* UIButton+QuartoButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+QuartoButton.h"; sourceTree = "<group>"; };
+		D8B0F55F21A951C1006F7600 /* UIButton+QuartoButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+QuartoButton.m"; sourceTree = "<group>"; };
 		F4A669C96886A70FB1CA6F8A /* Pods-QuartoXD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuartoXD.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuartoXD/Pods-QuartoXD.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,6 +118,8 @@
 				682EC0A42190153900F74903 /* UIColor+QuartoColor.m */,
 				68C7551B2197B3A500F034B3 /* UIFont+QuartoFont.h */,
 				68C7551C2197B3A500F034B3 /* UIFont+QuartoFont.m */,
+				D8B0F55E21A951C1006F7600 /* UIButton+QuartoButton.h */,
+				D8B0F55F21A951C1006F7600 /* UIButton+QuartoButton.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -207,16 +212,12 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-QuartoXD/Pods-QuartoXD-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CustomIOSAlertView/CustomIOSAlertView.framework",
 				"${BUILT_PRODUCTS_DIR}/Shimmer/Shimmer.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CustomIOSAlertView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Shimmer.framework",
@@ -231,15 +232,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-QuartoXD-checkManifestLockResult.txt",
 			);
@@ -256,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				682EC092218EDB1000F74903 /* main.m in Sources */,
+				D8B0F56021A951C1006F7600 /* UIButton+QuartoButton.m in Sources */,
 				682EC0A0218EDD0700F74903 /* MenuView.m in Sources */,
 				682EC0A52190153900F74903 /* UIColor+QuartoColor.m in Sources */,
 				682EC09D218EDCCF00F74903 /* MenuViewController.m in Sources */,

@@ -9,11 +9,9 @@
 #import "MenuView.h"
 #import "../Categories/UIColor+QuartoColor.h"
 #import "../Categories/UIFont+QuartoFont.h"
+#import "../Categories/UIButton+QuartoButton.h"
 
 @interface MenuView()
-
-@property (nonatomic, strong) UIStackView *stackView;
-
 @end
 
 @implementation MenuView {
@@ -36,24 +34,15 @@
     self.clipsToBounds = YES;
 
     // Set up subviews
-    [self setupStackview];
     [self setupTitle];
     [self setupSinglePlayerButton];
-    [self setupHowToButton];
+    [self setupVersusButton];
     
     // Inform the constraints engine to update the constraints.
     [self setNeedsUpdateConstraints];
 }
 
-- (void)setupStackview {
-    self.stackView = [[UIStackView alloc] init];
-    self.stackView.axis = UILayoutConstraintAxisVertical;
-    self.stackView.distribution = UIStackViewDistributionFillEqually;
-    self.stackView.alignment = UIStackViewAlignmentCenter;
-    self.stackView.spacing = 30;
-    self.stackView.translatesAutoresizingMaskIntoConstraints = NO;
-    [self addSubview:self.stackView];
-}
+#pragma mark - Set up views
 
 - (void)setupTitle {
     self.titleLabel = [[UILabel alloc] init];
@@ -65,65 +54,68 @@
 #pragma mark - Test these on different devices.
     self.titleLabel.minimumScaleFactor = 0.5;
     self.titleLabel.adjustsFontSizeToFitWidth = YES;
-    [self.stackView addArrangedSubview:self.titleLabel];
+    [self addSubview:self.titleLabel];
 }
 
 - (void)setupSinglePlayerButton {
     self.singlePlayerButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.singlePlayerButton.layer.shadowOpacity = 0.5f;
-    self.singlePlayerButton.layer.shadowRadius = 1;
-    self.singlePlayerButton.layer.shadowOffset = CGSizeMake(0, 6);
     self.singlePlayerButton.translatesAutoresizingMaskIntoConstraints = NO;
     self.singlePlayerButton.backgroundColor = [UIColor quartoWhite];
+    [self.singlePlayerButton quartoAddShadow];
     [self.singlePlayerButton setTitle:@"Single" forState:UIControlStateNormal];
     [self.singlePlayerButton setTitleColor:[UIColor quartoBlack] forState:UIControlStateNormal];
     [self.singlePlayerButton setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
-    [self.stackView addArrangedSubview:self.singlePlayerButton];
+    [self addSubview:self.singlePlayerButton];
 }
 
-- (void)setupHowToButton {
-    self.howToButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.howToButton.layer.shadowOpacity = 0.5f;
-    self.howToButton.layer.shadowRadius = 1;
-    self.howToButton.layer.shadowOffset = CGSizeMake(0, 6);
-    self.howToButton.translatesAutoresizingMaskIntoConstraints = NO;
-    self.howToButton.backgroundColor = [UIColor quartoWhite];
-    [self.howToButton setTitle:@"Help" forState:UIControlStateNormal];
-    [self.howToButton setTitleColor:[UIColor quartoBlack] forState:UIControlStateNormal];
-    [self.howToButton setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
-    [self.stackView addArrangedSubview:self.howToButton];
+- (void)setupVersusButton {
+    self.versusButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.versusButton.translatesAutoresizingMaskIntoConstraints = NO;
+    self.versusButton.backgroundColor = [UIColor quartoWhite];
+    [self.versusButton quartoAddShadow];
+    [self.versusButton setTitle:@"Versus" forState:UIControlStateNormal];
+    [self.versusButton setTitleColor:[UIColor quartoBlack] forState:UIControlStateNormal];
+    [self.versusButton setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
+    [self addSubview:self.versusButton];
 }
 
 #pragma mark - Layouts
 
-//- (void)layoutSubviews {
-//    [super layoutSubviews];
-//    
-////    self.singlePlayerButton.layer.cornerRadius = self.singlePlayerButton.bounds.size.height * 1/8.f;
-////    self.howToButton.layer.cornerRadius = self.howToButton.bounds.size.height * 1/8.f;
-//}
-//
-//+ (BOOL)requiresConstraintBasedLayout {
-//    return YES;
-//}
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    self.singlePlayerButton.layer.cornerRadius = self.singlePlayerButton.bounds.size.height * 1/8.f;
+    self.howToButton.layer.cornerRadius = self.howToButton.bounds.size.height * 1/8.f;
+}
 
-- (void)constraintStackView {
-    [self.stackView.topAnchor constraintEqualToAnchor:self.layoutMarginsGuide.topAnchor constant:200].active = YES;
-    [self.stackView.leftAnchor constraintEqualToAnchor:self.layoutMarginsGuide.leftAnchor].active = YES;
-    [self.stackView.bottomAnchor constraintEqualToAnchor:self.layoutMarginsGuide.bottomAnchor constant:-200].active = YES;
-    [self.stackView.rightAnchor constraintEqualToAnchor:self.layoutMarginsGuide.rightAnchor].active = YES;
++ (BOOL)requiresConstraintBasedLayout {
+    return YES;
+}
+
+- (void)constraintTitleLabel {
+    [self.titleLabel.widthAnchor constraintEqualToAnchor:self.widthAnchor multiplier:0.6].active = YES;
+    [self.titleLabel.heightAnchor constraintEqualToConstant:120];
+    [self.titleLabel.centerXAnchor constraintEqualToAnchor:self.layoutMarginsGuide.centerXAnchor].active = YES;
+    [self.titleLabel.topAnchor constraintEqualToAnchor:self.layoutMarginsGuide.topAnchor constant:100].active = YES;
 }
 
 - (void)constraintSinglePlayerButton {
-//    [self.singlePlayerButton.heightAnchor constraintEqualToConstant:120].active = YES;
+//    [self.singlePlayerButton.widthAnchor constraintEqualToAnchor:self.layoutMarginsGuide.widthAnchor multiplier:0.5].active = YES;
+    [self.singlePlayerButton.heightAnchor constraintEqualToAnchor:self.titleLabel.heightAnchor multiplier:0.4].active = YES;
+    [self.singlePlayerButton.bottomAnchor constraintEqualToAnchor:self.titleLabel.bottomAnchor constant:50].active = YES;
+    [self.singlePlayerButton.centerXAnchor constraintEqualToAnchor:self.centerXAnchor constant:1].active = YES;
+    
+    
     [self.singlePlayerButton.leftAnchor constraintEqualToAnchor:self.titleLabel.leftAnchor].active = YES;
     [self.singlePlayerButton.rightAnchor constraintEqualToAnchor:self.titleLabel.rightAnchor].active = YES;
+    
 }
 
-- (void)constraintHowToButton {
-    //    [self.singlePlayerButton.heightAnchor constraintEqualToConstant:120].active = YES;
-    [self.howToButton.leftAnchor constraintEqualToAnchor:self.titleLabel.leftAnchor].active = YES;
-    [self.howToButton.rightAnchor constraintEqualToAnchor:self.titleLabel.rightAnchor].active = YES;
+- (void)constraintVersusButton {
+    [self.versusButton.topAnchor constraintEqualToAnchor:self.titleLabel.bottomAnchor constant:50].active = YES;
+    [self.versusButton.leftAnchor constraintEqualToAnchor:self.titleLabel.leftAnchor].active = YES;
+    [self.versusButton.rightAnchor constraintEqualToAnchor:self.titleLabel.rightAnchor].active = YES;
+    [self.versusButton.heightAnchor constraintEqualToAnchor:self.layoutMarginsGuide.heightAnchor multiplier:0.1].active = YES;
 }
 
 - (void)updateConstraints {
@@ -132,9 +124,9 @@
         return;
     }
     
-    [self constraintStackView];
+    [self constraintTitleLabel];
     [self constraintSinglePlayerButton];
-    [self constraintHowToButton];
+//    [self constraintVersusButton];
     
     _didSetupConstraints = YES;
     [super updateConstraints];

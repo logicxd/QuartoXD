@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (UIFont *) quartoTitle;
 
++ (UIFont *) quartoButtonMenu;
+
 @end
 
 NS_ASSUME_NONNULL_END

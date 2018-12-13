@@ -11,7 +11,11 @@
 @implementation UIFont (QuartoFont)
 
 + (UIFont *) quartoTitle {
-    return [UIFont systemFontOfSize:40];
+    return [UIFont systemFontOfSize:50];
+}
+
++ (UIFont *) quartoButtonMenu {
+    return [UIFont systemFontOfSize:24];
 }
 
 @end

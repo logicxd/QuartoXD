@@ -64,7 +64,9 @@
     [self.singlePlayerButton quartoAddShadow];
     [self.singlePlayerButton setTitle:@"Single" forState:UIControlStateNormal];
     [self.singlePlayerButton setTitleColor:[UIColor quartoBlack] forState:UIControlStateNormal];
-    [self.singlePlayerButton setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
+    
+    self.singlePlayerButton.titleLabel.font = [UIFont quartoButtonMenu];
+    
     [self addSubview:self.singlePlayerButton];
 }
 
@@ -75,7 +77,9 @@
     [self.versusButton quartoAddShadow];
     [self.versusButton setTitle:@"Versus" forState:UIControlStateNormal];
     [self.versusButton setTitleColor:[UIColor quartoBlack] forState:UIControlStateNormal];
-    [self.versusButton setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
+    
+    self.versusButton.titleLabel.font = [UIFont quartoButtonMenu];
+    
     [self addSubview:self.versusButton];
 }
 
@@ -84,38 +88,34 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    self.singlePlayerButton.layer.cornerRadius = self.singlePlayerButton.bounds.size.height * 1/8.f;
-    self.howToButton.layer.cornerRadius = self.howToButton.bounds.size.height * 1/8.f;
+    self.singlePlayerButton.layer.cornerRadius = self.singlePlayerButton.bounds.size.height * 1/2.f;
+    self.versusButton.layer.cornerRadius = self.versusButton.bounds.size.height * 1/2.f;
 }
 
-+ (BOOL)requiresConstraintBasedLayout {
-    return YES;
-}
+//+ (BOOL)requiresConstraintBasedLayout {
+//    return YES;
+//}
 
 - (void)constraintTitleLabel {
-    [self.titleLabel.widthAnchor constraintEqualToAnchor:self.widthAnchor multiplier:0.6].active = YES;
-    [self.titleLabel.heightAnchor constraintEqualToConstant:120];
     [self.titleLabel.centerXAnchor constraintEqualToAnchor:self.layoutMarginsGuide.centerXAnchor].active = YES;
-    [self.titleLabel.topAnchor constraintEqualToAnchor:self.layoutMarginsGuide.topAnchor constant:100].active = YES;
+    [self.titleLabel.topAnchor constraintEqualToAnchor:self.layoutMarginsGuide.topAnchor constant:140].active = YES;
+    [self.titleLabel.widthAnchor constraintEqualToAnchor:self.widthAnchor multiplier:0.6].active = YES;
 }
 
 - (void)constraintSinglePlayerButton {
-//    [self.singlePlayerButton.widthAnchor constraintEqualToAnchor:self.layoutMarginsGuide.widthAnchor multiplier:0.5].active = YES;
-    [self.singlePlayerButton.heightAnchor constraintEqualToAnchor:self.titleLabel.heightAnchor multiplier:0.4].active = YES;
-    [self.singlePlayerButton.bottomAnchor constraintEqualToAnchor:self.titleLabel.bottomAnchor constant:50].active = YES;
-    [self.singlePlayerButton.centerXAnchor constraintEqualToAnchor:self.centerXAnchor constant:1].active = YES;
-    
-    
-    [self.singlePlayerButton.leftAnchor constraintEqualToAnchor:self.titleLabel.leftAnchor].active = YES;
-    [self.singlePlayerButton.rightAnchor constraintEqualToAnchor:self.titleLabel.rightAnchor].active = YES;
-    
+    [self.singlePlayerButton.centerXAnchor constraintEqualToAnchor:self.centerXAnchor].active = YES;
+    [self.singlePlayerButton.bottomAnchor constraintEqualToAnchor:self.layoutMarginsGuide.bottomAnchor constant:-100].active = YES;
+    [self.singlePlayerButton.leftAnchor constraintEqualToAnchor:self.layoutMarginsGuide.leftAnchor constant:25].active = YES;
+    [self.singlePlayerButton.rightAnchor constraintEqualToAnchor:self.layoutMarginsGuide.rightAnchor constant:-25].active = YES;
+    [self.singlePlayerButton.heightAnchor constraintEqualToConstant:50].active = YES;
 }
 
 - (void)constraintVersusButton {
-    [self.versusButton.topAnchor constraintEqualToAnchor:self.titleLabel.bottomAnchor constant:50].active = YES;
-    [self.versusButton.leftAnchor constraintEqualToAnchor:self.titleLabel.leftAnchor].active = YES;
-    [self.versusButton.rightAnchor constraintEqualToAnchor:self.titleLabel.rightAnchor].active = YES;
-    [self.versusButton.heightAnchor constraintEqualToAnchor:self.layoutMarginsGuide.heightAnchor multiplier:0.1].active = YES;
+    [self.versusButton.centerXAnchor constraintEqualToAnchor:self.centerXAnchor].active = YES;
+    [self.versusButton.topAnchor constraintEqualToAnchor:self.singlePlayerButton.bottomAnchor constant:20].active = YES;
+    [self.versusButton.leftAnchor constraintEqualToAnchor:self.layoutMarginsGuide.leftAnchor constant:25].active = YES;
+    [self.versusButton.rightAnchor constraintEqualToAnchor:self.layoutMarginsGuide.rightAnchor constant:-25].active = YES;
+    [self.versusButton.heightAnchor constraintEqualToConstant:50].active = YES;
 }
 
 - (void)updateConstraints {
@@ -126,12 +126,10 @@
     
     [self constraintTitleLabel];
     [self constraintSinglePlayerButton];
-//    [self constraintVersusButton];
+    [self constraintVersusButton];
     
     _didSetupConstraints = YES;
     [super updateConstraints];
 }
-
-
 
 @end

@@ -10,10 +10,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NS_ENUM(NSInteger, MenuButtonType){
-    MenuButtonTypeSingle,
-    MenuButtonTypeVersus
-};
+//typedef NS_ENUM(NSInteger, MenuButtonType){
+//    MenuButtonTypeSingle,
+//    MenuButtonTypeVersus
+//};
 
 // Forward declarations
 @class MenuView;
@@ -24,9 +24,7 @@ typedef NS_ENUM(NSInteger, MenuButtonType){
 @end
 
 @interface MenuView : UIView
-@property (nonatomic, strong) UILabel *titleLabel;
-@property (nonatomic, strong) UIButton *singlePlayerButton;
-@property (nonatomic, strong) UIButton *versusButton;
+@property (nonatomic, strong) id<MenuViewDelegate> delegate;
 @end
 
 NS_ASSUME_NONNULL_END

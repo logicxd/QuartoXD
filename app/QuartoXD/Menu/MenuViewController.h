@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MenuView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MenuViewController : UIViewController
-
+@interface MenuViewController : UIViewController <MenuViewDelegate>
+@property (nonatomic, strong) MenuView *view;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -7,24 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "../BaseClass/QuartoButton.h"
 
 NS_ASSUME_NONNULL_BEGIN
-
-//typedef NS_ENUM(NSInteger, MenuButtonType){
-//    MenuButtonTypeSingle,
-//    MenuButtonTypeVersus
-//};
 
 // Forward declarations
 @class MenuView;
 
-@protocol MenuViewDelegate <NSObject>
+@protocol MenuViewDelegate
 - (void)buttonPressedSinglePlayer;
 - (void)buttonPressedVersus;
 @end
 
-@interface MenuView : UIView
-@property (nonatomic, strong) id<MenuViewDelegate> delegate;
+@interface MenuView : UIView <QuartoButtonDelegate>
+@property (nonatomic, weak) id<MenuViewDelegate> delegate;
 @end
 
 NS_ASSUME_NONNULL_END

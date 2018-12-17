@@ -11,12 +11,16 @@
 #import "UIColor+QuartoColor.h"
 
 @interface MenuViewController()
+
 @end
 
 @implementation MenuViewController
 
+@dynamic view;
+
 - (void)loadView {
     self.view = [[MenuView alloc] init];
+    self.view.delegate = self;
 }
 
 - (void)viewDidLoad {
@@ -24,6 +28,14 @@
     // Do any additional setup after loading the view.
     
     self.view.backgroundColor = [UIColor quartoRed];
+}
+
+- (void)buttonPressedSinglePlayer {
+    
+}
+
+- (void)buttonPressedVersus {
+    
 }
 
 @end

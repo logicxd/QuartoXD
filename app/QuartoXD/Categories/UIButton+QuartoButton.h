@@ -9,5 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface UIButton (QuartoButton)
++ (float)quartoLoadAnimationDuration;
++ (float)quartoActionAnimationDuration;
++ (CGSize)quartoShadowOffset;
+
 - (void)quartoAddShadow;
+- (void)quartoAnimateShadowOffsetBy:(float)amount duration:(float)duration;
+- (void)transitionOnYAxisBy:(float)amount duration:(float)duration;
 @end

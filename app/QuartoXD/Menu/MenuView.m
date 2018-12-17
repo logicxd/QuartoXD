@@ -10,11 +10,12 @@
 #import "../Categories/UIColor+QuartoColor.h"
 #import "../Categories/UIFont+QuartoFont.h"
 #import "../Categories/UIButton+QuartoButton.h"
+#import "../BaseClass/QuartoButton.h"
 
 @interface MenuView()
 @property (nonatomic, strong) UILabel *titleLabel;
-@property (nonatomic, strong) UIButton *singlePlayerButton;
-@property (nonatomic, strong) UIButton *versusButton;
+@property (nonatomic, strong) QuartoButton *singlePlayerButton;
+@property (nonatomic, strong) QuartoButton *versusButton;
 
 @property (nonatomic, strong) UIDynamicAnimator *animator;
 @end
@@ -37,7 +38,6 @@
     _didSetupConstraints = NO;
     self.translatesAutoresizingMaskIntoConstraints = NO;
     self.clipsToBounds = YES;
-//    self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self];
 
     // Set up subviews
     [self setupTitle];
@@ -64,59 +64,35 @@
 }
 
 - (void)setupSinglePlayerButton {
-    self.singlePlayerButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.singlePlayerButton.translatesAutoresizingMaskIntoConstraints = NO;
-    self.singlePlayerButton.backgroundColor = [UIColor quartoWhite];
-    [self.singlePlayerButton quartoAddShadow];
-    [self.singlePlayerButton setTitle:@"Single" forState:UIControlStateNormal];
-    [self.singlePlayerButton setTitleColor:[UIColor quartoBlack] forState:UIControlStateNormal];
-    [self.singlePlayerButton addTarget:self action:@selector(singlePlayerButtonPressed) forControlEvents:UIControlEventTouchUpInside];
-
-    self.singlePlayerButton.titleLabel.font = [UIFont quartoButtonMenu];
-    
+    self.singlePlayerButton = [[QuartoButton alloc] initWithTitle:@"Single"];
+    self.singlePlayerButton.delegate = self;
     [self addSubview:self.singlePlayerButton];
 }
 
 - (void)setupVersusButton {
-    self.versusButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.versusButton.translatesAutoresizingMaskIntoConstraints = NO;
-    self.versusButton.backgroundColor = [UIColor quartoWhite];
-    [self.versusButton quartoAddShadow];
-    [self.versusButton setTitle:@"Versus" forState:UIControlStateNormal];
-    [self.versusButton setTitleColor:[UIColor quartoBlack] forState:UIControlStateNormal];
-    [self.versusButton addTarget:self action:@selector(versusButtonPressed) forControlEvents:UIControlEventTouchUpInside];
-    
-    self.versusButton.titleLabel.font = [UIFont quartoButtonMenu];
-    
+    self.versusButton = [[QuartoButton alloc] initWithTitle:@"Versus"];
+    self.versusButton.delegate = self;
     [self addSubview:self.versusButton];
 }
 
 #pragma mark - Constraint Layouts
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    
-    self.singlePlayerButton.layer.cornerRadius = self.singlePlayerButton.bounds.size.height * 1/2.f;
-    self.versusButton.layer.cornerRadius = self.versusButton.bounds.size.height * 1/2.f;
-    
-//    UIGravityBehavior *behavior = [[UIGravityBehavior alloc] initWithItems:@[self.singlePlayerButton]];
-//    [self.animator addBehavior:behavior];
-    
-    [UIView animateWithDuration:0.33 delay:0.00 options:UIViewAnimationOptionCurveEaseOut animations:^{
-        CGRect frame = self.singlePlayerButton.frame;
-        frame.origin.y = frame.origin.y - 140;
-        self.singlePlayerButton.frame = frame;
-    } completion:nil];
-    
-    [UIView animateWithDuration:0.33 delay:0.00 options:UIViewAnimationOptionCurveEaseOut animations:^{
-        CGRect frame = self.versusButton.frame;
-        frame.origin.y = frame.origin.y - 140;
-        self.versusButton.frame = frame;
-    } completion:nil];
-}
-
 + (BOOL)requiresConstraintBasedLayout {
     return YES;
+}
+
+- (void)updateConstraints {
+    if (_didSetupConstraints) {
+        [super updateConstraints];
+        return;
+    }
+    
+    [self constraintTitleLabel];
+    [self constraintSinglePlayerButton];
+    [self constraintVersusButton];
+    
+    _didSetupConstraints = YES;
+    [super updateConstraints];
 }
 
 - (void)constraintTitleLabel {
@@ -141,37 +117,24 @@
     [self.versusButton.heightAnchor constraintEqualToConstant:50].active = YES;
 }
 
-- (void)updateConstraints {
-    if (_didSetupConstraints) {
-        [super updateConstraints];
-        return;
-    }
+- (void)layoutSubviews {
+    [super layoutSubviews];
     
-    [self constraintTitleLabel];
-    [self constraintSinglePlayerButton];
-    [self constraintVersusButton];
+    self.singlePlayerButton.layer.cornerRadius = self.singlePlayerButton.bounds.size.height * 1/2.f;
+    self.versusButton.layer.cornerRadius = self.versusButton.bounds.size.height * 1/2.f;
     
-    _didSetupConstraints = YES;
-    [super updateConstraints];
+    [self.singlePlayerButton transitionOnYAxisBy:-140 duration:[UIButton quartoLoadAnimationDuration]];
+    [self.versusButton transitionOnYAxisBy:-140 duration:[UIButton quartoLoadAnimationDuration]];
 }
 
 #pragma mark - Button Actions
 
-- (void)singlePlayerButtonPressed {
-//    [UIView animateWithDuration:0.5 animations:^{
-//        CGRect frame = self.singlePlayerButton.frame;
-//        frame.origin.y = frame.origin.y - 100;
-//        self.singlePlayerButton.frame = frame;
-//        [self layoutIfNeeded];
-//    } completion:^(BOOL finished) {
-//
-//    }];
-    
-    [self.delegate buttonPressedSinglePlayer];
-}
-
-- (void)versusButtonPressed {
-    [self.delegate buttonPressedVersus];
+- (void)performButtonActionWithButton:(QuartoButton *)button {
+    if ([button isEqual:self.singlePlayerButton]) {
+        [self.delegate buttonPressedSinglePlayer];
+    } else if ([button isEqual:self.versusButton]) {
+        [self.delegate buttonPressedVersus];
+    }
 }
 
 #pragma mark -

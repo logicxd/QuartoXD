@@ -10,6 +10,7 @@
 #import "../Categories/UIColor+QuartoColor.h"
 #import "../Categories/UIButton+QuartoButton.h"
 #import "../Categories/UIFont+QuartoFont.h"
+#import "../Utilities/SoundManager.h"
 
 @interface QuartoButton()
 @end
@@ -53,6 +54,7 @@
 
 - (void)buttonPressedAnimation {
     if (!_isPressed) {
+        [SoundManager playSound:@"ButtonPress"];
         [self quartoAnimateShadowOffsetBy:-[UIButton quartoShadowOffset].height duration:[UIButton quartoActionAnimationDuration]];
         [self transitionOnYAxisBy:[UIButton quartoShadowOffset].height duration:[UIButton quartoActionAnimationDuration]];
         _isPressed = YES;

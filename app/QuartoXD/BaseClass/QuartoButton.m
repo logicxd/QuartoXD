@@ -13,18 +13,17 @@
 #import "../Utilities/SoundManager.h"
 
 @interface QuartoButton()
+@property (nonatomic, assign) BOOL isPressed;
 @end
 
-@implementation QuartoButton {
-    BOOL _isPressed;
-}
+@implementation QuartoButton
 
 #pragma mark - Initialize Button
 
 - (instancetype)initWithTitle:(NSString *)title {
     self = [super init];
     if (self) {
-        _isPressed = NO;
+        self.isPressed = NO;
         self.translatesAutoresizingMaskIntoConstraints = NO;
         self.backgroundColor = [UIColor quartoWhite];
         [self quartoAddShadow];
@@ -53,19 +52,19 @@
 }
 
 - (void)buttonPressedAnimation {
-    if (!_isPressed) {
+    if (!self.isPressed) {
         [SoundManager playSound:@"ButtonPress"];
         [self quartoAnimateShadowOffsetBy:-[UIButton quartoShadowOffset].height duration:[UIButton quartoActionAnimationDuration]];
         [self transitionOnYAxisBy:[UIButton quartoShadowOffset].height duration:[UIButton quartoActionAnimationDuration]];
-        _isPressed = YES;
+        self.isPressed = YES;
     }
 }
 
 - (void)buttonDepressedAnimation {
-    if (_isPressed) {
+    if (self.isPressed) {
         [self quartoAnimateShadowOffsetBy:[UIButton quartoShadowOffset].height duration:[UIButton quartoActionAnimationDuration]];
         [self transitionOnYAxisBy:-[UIButton quartoShadowOffset].height duration:[UIButton quartoActionAnimationDuration]];
-        _isPressed = NO;
+        self.isPressed = NO;
     }
 }
 

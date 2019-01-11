@@ -26,12 +26,13 @@
     return sharedSoundManager;
 }
 
++ (void)setupAVAudioSession {
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryAmbient error:nil];
+}
+
 + (void)playSound:(NSString *)fileName {
     NSURL* url = [NSBundle.mainBundle URLForResource:fileName withExtension:@"m4a"];
-    
-    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
     [[AVAudioSession sharedInstance] setActive:YES error:nil];
-    
     AVAudioPlayer *audioPlayer = [SoundManager sharedManager].audioPlayer;
     [audioPlayer stop];
     audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url fileTypeHint:AVFileTypeAppleM4A error:nil];

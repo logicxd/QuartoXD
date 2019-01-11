@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "Menu/MenuViewController.h"
+#import "Utilities/SoundManager.h"
 
 @interface AppDelegate ()
 
@@ -20,6 +21,10 @@
     self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
     self.window.rootViewController = [[MenuViewController alloc] init];
     [self.window makeKeyAndVisible];
+    
+    // Set up audio settings singleton
+    [SoundManager setupAVAudioSession];
+    
     return YES;
 }
 

@@ -10,8 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class AVAudioPlayer; 
+
 @interface SoundManager : NSObject
 
++ (void)setupAVAudioSession;
 + (void)playSound:(NSString *)fileName;
 
 @end

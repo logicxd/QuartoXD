@@ -31,6 +31,7 @@
         [self setTitleColor:[UIColor quartoBlack] forState:UIControlStateNormal];
         [self addTarget:self action:@selector(buttonPerformAction) forControlEvents:UIControlEventTouchUpInside];
         [self addTarget:self action:@selector(buttonPressedAnimation) forControlEvents:UIControlEventTouchDown];
+        [self addTarget:self action:@selector(buttonDepressedAnimation) forControlEvents:UIControlEventTouchDragOutside];
         
         self.titleLabel.font = [UIFont quartoButtonMenu];
     }
@@ -66,22 +67,6 @@
         [self transitionOnYAxisBy:-[UIButton quartoShadowOffset].height duration:[UIButton quartoActionAnimationDuration]];
         self.isPressed = NO;
     }
-}
-
-- (BOOL)continueTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event
-{
-    // Modified from https://stackoverflow.com/a/14400040
-    CGFloat boundsExtension = 5.0f;
-    CGRect outerBounds = CGRectInset(self.bounds, -1 * boundsExtension, -1 * boundsExtension);
-    
-    BOOL touchOutside = !CGRectContainsPoint(outerBounds, [touch locationInView:self]);
-    if(touchOutside) {
-        [self buttonDepressedAnimation];
-    }
-    else {
-        [self buttonPressedAnimation];
-    }
-    return [super continueTrackingWithTouch:touch withEvent:event];
 }
 
 #pragma mark -

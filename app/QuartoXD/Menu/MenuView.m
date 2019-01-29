@@ -12,6 +12,8 @@
 #import "../Categories/UIButton+QuartoButton.h"
 #import "../BaseClass/QuartoButton.h"
 
+#define BUTTON_LOAD_ANIMATION_DURATION 0.33
+
 @interface MenuView()
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) QuartoButton *singlePlayerButton;
@@ -123,8 +125,8 @@
     self.singlePlayerButton.layer.cornerRadius = self.singlePlayerButton.bounds.size.height * 1/2.f;
     self.versusButton.layer.cornerRadius = self.versusButton.bounds.size.height * 1/2.f;
     
-    [self.singlePlayerButton transitionOnYAxisBy:-140 duration:[UIButton quartoLoadAnimationDuration]];
-    [self.versusButton transitionOnYAxisBy:-140 duration:[UIButton quartoLoadAnimationDuration]];
+    [self.singlePlayerButton transitionOnYAxisBy:-140];
+    [self.versusButton transitionOnYAxisBy:-140];
 }
 
 #pragma mark - Button Actions

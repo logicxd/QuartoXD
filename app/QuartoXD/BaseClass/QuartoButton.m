@@ -55,16 +55,16 @@
 - (void)buttonPressedAnimation {
     if (!self.isPressed) {
         [SoundManager playSound:@"ButtonPress"];
-        [self quartoAnimateShadowOffsetBy:-[UIButton quartoShadowOffset].height duration:[UIButton quartoActionAnimationDuration]];
-        [self transitionOnYAxisBy:[UIButton quartoShadowOffset].height duration:[UIButton quartoActionAnimationDuration]];
+        [self quartoAnimateShadowOffsetBy:-[UIButton quartoShadowOffset].height];
+        [self transitionOnYAxisBy:[UIButton quartoShadowOffset].height];
         self.isPressed = YES;
     }
 }
 
 - (void)buttonDepressedAnimation {
     if (self.isPressed) {
-        [self quartoAnimateShadowOffsetBy:[UIButton quartoShadowOffset].height duration:[UIButton quartoActionAnimationDuration]];
-        [self transitionOnYAxisBy:-[UIButton quartoShadowOffset].height duration:[UIButton quartoActionAnimationDuration]];
+        [self quartoAnimateShadowOffsetBy:[UIButton quartoShadowOffset].height];
+        [self transitionOnYAxisBy:-[UIButton quartoShadowOffset].height];
         self.isPressed = NO;
     }
 }

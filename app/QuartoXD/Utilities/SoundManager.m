@@ -16,7 +16,7 @@
 
 @implementation SoundManager
 
-+ (instancetype)sharedManager {
++ (instancetype)instance {
     static SoundManager *sharedSoundManager = nil;
     @synchronized (self) {
         if (!sharedSoundManager) {
@@ -28,17 +28,13 @@
 
 + (void)setupAVAudioSession {
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryAmbient error:nil];
+    [[AVAudioSession sharedInstance] setActive:YES error:nil];
 }
 
 + (void)playSound:(NSString *)fileName {
     NSURL* url = [NSBundle.mainBundle URLForResource:fileName withExtension:@"m4a"];
-    [[AVAudioSession sharedInstance] setActive:YES error:nil];
-    AVAudioPlayer *audioPlayer = [SoundManager sharedManager].audioPlayer;
-    [audioPlayer stop];
-    audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url fileTypeHint:AVFileTypeAppleM4A error:nil];
-    [audioPlayer play];
-    
-    [SoundManager sharedManager].audioPlayer = audioPlayer;
+    [SoundManager instance].audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url fileTypeHint:AVFileTypeAppleM4A error:nil];
+    [[SoundManager instance].audioPlayer play];
 }
 
 @end

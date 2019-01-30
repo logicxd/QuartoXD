@@ -424,6 +424,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = aungmoe.QuartoXD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -443,6 +444,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = aungmoe.QuartoXD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

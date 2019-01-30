@@ -7,10 +7,10 @@
 //
 
 #import "QuartoButton.h"
-#import "../Categories/UIColor+QuartoColor.h"
-#import "../Categories/UIButton+QuartoButton.h"
-#import "../Categories/UIFont+QuartoFont.h"
-#import "../Utilities/SoundManager.h"
+#import "UIColor+QuartoColor.h"
+#import "UIButton+QuartoButton.h"
+#import "UIFont+QuartoFont.h"
+#import "SoundManager.h"
 
 @interface QuartoButton()
 @property (nonatomic, assign) BOOL isPressed;

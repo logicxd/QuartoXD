@@ -7,8 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "Menu/MenuViewController.h"
-#import "Utilities/SoundManager.h"
+#import "MenuViewController.h"
+#import "SoundManager.h"
 
 @interface AppDelegate ()
 

@@ -17,6 +17,7 @@
 		68BA154B21CA07FB0048E29F /* ButtonPress.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 68BA154A21CA07FB0048E29F /* ButtonPress.m4a */; };
 		68BA154F21CA09640048E29F /* SoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 68BA154E21CA09640048E29F /* SoundManager.m */; };
 		68C7551D2197B3A500F034B3 /* UIFont+QuartoFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C7551C2197B3A500F034B3 /* UIFont+QuartoFont.m */; };
+		68F8EEBD22017436003CBC51 /* QuartoBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F8EEBC22017436003CBC51 /* QuartoBoardView.m */; };
 		D8B0F56021A951C1006F7600 /* UIButton+QuartoButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B0F55F21A951C1006F7600 /* UIButton+QuartoButton.m */; };
 		EF2A96C417EBCF75C2003586 /* Pods_QuartoXD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4D04211757E885067542CDB /* Pods_QuartoXD.framework */; };
 /* End PBXBuildFile section */
@@ -41,6 +42,8 @@
 		68BA154E21CA09640048E29F /* SoundManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SoundManager.m; sourceTree = "<group>"; };
 		68C7551B2197B3A500F034B3 /* UIFont+QuartoFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIFont+QuartoFont.h"; sourceTree = "<group>"; };
 		68C7551C2197B3A500F034B3 /* UIFont+QuartoFont.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIFont+QuartoFont.m"; sourceTree = "<group>"; };
+		68F8EEBB22017436003CBC51 /* QuartoBoardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuartoBoardView.h; sourceTree = "<group>"; };
+		68F8EEBC22017436003CBC51 /* QuartoBoardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuartoBoardView.m; sourceTree = "<group>"; };
 		88A34C3014394B0953805F1B /* Pods-QuartoXD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuartoXD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QuartoXD/Pods-QuartoXD.debug.xcconfig"; sourceTree = "<group>"; };
 		C4D04211757E885067542CDB /* Pods_QuartoXD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuartoXD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8B0F55E21A951C1006F7600 /* UIButton+QuartoButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+QuartoButton.h"; sourceTree = "<group>"; };
@@ -86,6 +89,7 @@
 				684DC51921C63CFE008B5939 /* BaseClass */,
 				682EC0A2219014D600F74903 /* Categories */,
 				68BA154C21CA08FF0048E29F /* Utilities */,
+				68F8EEBA220173EB003CBC51 /* Board */,
 				682EC098218EDC1400F74903 /* Menu */,
 				682EC082218EDB0F00F74903 /* AppDelegate.h */,
 				682EC083218EDB0F00F74903 /* AppDelegate.m */,
@@ -151,6 +155,15 @@
 				68BA154E21CA09640048E29F /* SoundManager.m */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		68F8EEBA220173EB003CBC51 /* Board */ = {
+			isa = PBXGroup;
+			children = (
+				68F8EEBB22017436003CBC51 /* QuartoBoardView.h */,
+				68F8EEBC22017436003CBC51 /* QuartoBoardView.m */,
+			);
+			path = Board;
 			sourceTree = "<group>";
 		};
 		9AD73B63A6DBE005DDB84720 /* Pods */ = {
@@ -285,6 +298,7 @@
 				682EC092218EDB1000F74903 /* main.m in Sources */,
 				684DC51C21C63D47008B5939 /* QuartoButton.m in Sources */,
 				D8B0F56021A951C1006F7600 /* UIButton+QuartoButton.m in Sources */,
+				68F8EEBD22017436003CBC51 /* QuartoBoardView.m in Sources */,
 				682EC0A0218EDD0700F74903 /* MenuView.m in Sources */,
 				682EC0A52190153900F74903 /* UIColor+QuartoColor.m in Sources */,
 				682EC09D218EDCCF00F74903 /* MenuViewController.m in Sources */,

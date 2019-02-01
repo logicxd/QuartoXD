@@ -14,6 +14,6 @@
 + (CGSize)quartoShadowOffset;
 
 - (void)quartoAddShadow;
-- (void)quartoAnimateShadowOffsetBy:(float)amount;
-- (void)transitionOnYAxisBy:(float)amount;
+- (void)quartoAnimateShadowOffsetBy:(float)amount completion:(void(^)(BOOL finished))completion;
+- (void)transitionOnYAxisBy:(float)amount completion:(void(^)(BOOL finished))completion;
 @end

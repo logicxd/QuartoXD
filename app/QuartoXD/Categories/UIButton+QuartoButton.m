@@ -10,7 +10,7 @@
 
 @implementation UIButton (QuartoButton)
 + (CGSize)quartoShadowOffset {
-    return CGSizeMake(0, 5);
+    return CGSizeMake(0, 2.5);
 }
 
 - (void)quartoAddShadow {
@@ -19,20 +19,24 @@
     self.layer.shadowOffset = [UIButton quartoShadowOffset];
 }
 
-- (void)quartoAnimateShadowOffsetBy:(float)amount {
-    [UIView animateWithDuration:QUARTO_BUTTON_ANIMATION_DURATION delay:0.00 options:UIViewAnimationOptionCurveEaseOut animations:^{
-        CGSize size = self.layer.shadowOffset;
-        size.height += amount;
-        self.layer.shadowOffset = size;
-    } completion:nil];
+- (void)quartoAnimateShadowOffsetBy:(float)amount completion:(void(^)(BOOL finished))completion {
+    [UIView animateWithDuration:QUARTO_BUTTON_ANIMATION_DURATION
+                          delay:0.00
+                        options:UIViewAnimationOptionCurveEaseOut
+                     animations:^{
+                         CGSize size = self.layer.shadowOffset;
+                         size.height += amount;
+                         self.layer.shadowOffset = size;
+                     }
+                     completion:completion];
 }
 
-- (void)transitionOnYAxisBy:(float)amount {
+- (void)transitionOnYAxisBy:(float)amount completion:(void(^)(BOOL finished))completion {
     [UIView animateWithDuration:QUARTO_BUTTON_ANIMATION_DURATION delay:0.00 options:UIViewAnimationOptionCurveEaseOut animations:^{
         CGRect frame = self.frame;
         frame.origin.y += amount;
         self.frame = frame;
-    } completion:nil];
+    } completion:completion];
 }
 
 @end

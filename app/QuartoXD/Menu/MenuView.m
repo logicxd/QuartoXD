@@ -40,6 +40,7 @@
     _didSetupConstraints = NO;
     self.translatesAutoresizingMaskIntoConstraints = NO;
     self.clipsToBounds = YES;
+    self.backgroundColor = [UIColor quartoRed];
 
     // Set up subviews
     [self setupTitle];
@@ -125,8 +126,8 @@
     self.singlePlayerButton.layer.cornerRadius = self.singlePlayerButton.bounds.size.height * 1/2.f;
     self.versusButton.layer.cornerRadius = self.versusButton.bounds.size.height * 1/2.f;
     
-    [self.singlePlayerButton transitionOnYAxisBy:-140];
-    [self.versusButton transitionOnYAxisBy:-140];
+    [self.singlePlayerButton transitionOnYAxisBy:-140 completion:nil];
+    [self.versusButton transitionOnYAxisBy:-140 completion:nil];
 }
 
 #pragma mark - Button Actions

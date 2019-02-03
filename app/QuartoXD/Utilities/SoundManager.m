@@ -37,4 +37,8 @@
     [[SoundManager instance].audioPlayer play];
 }
 
++ (void)peak {
+    AudioServicesPlaySystemSound(1519);
+}
+
 @end

@@ -6,15 +6,14 @@
 //  Copyright © 2018 Aung Moe. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <AVFoundation/AVFoundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SoundManager : NSObject
-
 + (void)setupAVAudioSession;
-+ (void)playSound:(NSString *)fileName;
-
++ (void)playSound:(NSString *)fileName fileExtension:(NSString *)extension fileTypeHint:(AVFileType)fileTypeHint;
++ (void)tick;
 @end
 
 NS_ASSUME_NONNULL_END

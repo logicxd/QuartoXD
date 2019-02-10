@@ -57,6 +57,7 @@
 - (void)buttonPressedAnimation {
     if (!self.isPressed) {
         [FeedbackGenerator impactOccurredLight];
+        [SoundManager tick];
         [self quartoAnimateShadowOffsetBy:-[UIButton quartoShadowOffset].height completion:nil];
         [self transitionOnYAxisBy:[UIButton quartoShadowOffset].height completion:nil];
         self.isPressed = YES;

@@ -14,12 +14,12 @@
 		682EC0A0218EDD0700F74903 /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 682EC09F218EDD0700F74903 /* MenuView.m */; };
 		682EC0A52190153900F74903 /* UIColor+QuartoColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 682EC0A42190153900F74903 /* UIColor+QuartoColor.m */; };
 		684DC51C21C63D47008B5939 /* QuartoButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 684DC51B21C63D47008B5939 /* QuartoButton.m */; };
-		68BA154B21CA07FB0048E29F /* ButtonPress.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 68BA154A21CA07FB0048E29F /* ButtonPress.m4a */; };
 		68BA154F21CA09640048E29F /* SoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 68BA154E21CA09640048E29F /* SoundManager.m */; };
 		68C7551D2197B3A500F034B3 /* UIFont+QuartoFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C7551C2197B3A500F034B3 /* UIFont+QuartoFont.m */; };
 		68F8EEBD22017436003CBC51 /* QuartoBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F8EEBC22017436003CBC51 /* QuartoBoardView.m */; };
 		D8B0F56021A951C1006F7600 /* UIButton+QuartoButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B0F55F21A951C1006F7600 /* UIButton+QuartoButton.m */; };
 		D8B7650D220FB288009AFA38 /* FeedbackGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B7650C220FB288009AFA38 /* FeedbackGenerator.m */; };
+		D8B7650F220FDBCE009AFA38 /* Tick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D8B7650E220FDBCE009AFA38 /* Tick.mp3 */; };
 		EF2A96C417EBCF75C2003586 /* Pods_QuartoXD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4D04211757E885067542CDB /* Pods_QuartoXD.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +38,6 @@
 		682EC0A42190153900F74903 /* UIColor+QuartoColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+QuartoColor.m"; sourceTree = "<group>"; };
 		684DC51A21C63D47008B5939 /* QuartoButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuartoButton.h; sourceTree = "<group>"; };
 		684DC51B21C63D47008B5939 /* QuartoButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuartoButton.m; sourceTree = "<group>"; };
-		68BA154A21CA07FB0048E29F /* ButtonPress.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = ButtonPress.m4a; sourceTree = "<group>"; };
 		68BA154D21CA09640048E29F /* SoundManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoundManager.h; sourceTree = "<group>"; };
 		68BA154E21CA09640048E29F /* SoundManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SoundManager.m; sourceTree = "<group>"; };
 		68C7551B2197B3A500F034B3 /* UIFont+QuartoFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIFont+QuartoFont.h"; sourceTree = "<group>"; };
@@ -51,6 +50,7 @@
 		D8B0F55F21A951C1006F7600 /* UIButton+QuartoButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+QuartoButton.m"; sourceTree = "<group>"; };
 		D8B7650B220FB288009AFA38 /* FeedbackGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedbackGenerator.h; sourceTree = "<group>"; };
 		D8B7650C220FB288009AFA38 /* FeedbackGenerator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedbackGenerator.m; sourceTree = "<group>"; };
+		D8B7650E220FDBCE009AFA38 /* Tick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Tick.mp3; sourceTree = "<group>"; };
 		F4A669C96886A70FB1CA6F8A /* Pods-QuartoXD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuartoXD.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuartoXD/Pods-QuartoXD.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,7 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				682EC08B218EDB1000F74903 /* Assets.xcassets */,
-				68BA154A21CA07FB0048E29F /* ButtonPress.m4a */,
+				D8B7650E220FDBCE009AFA38 /* Tick.mp3 */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -247,7 +247,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68BA154B21CA07FB0048E29F /* ButtonPress.m4a in Resources */,
+				D8B7650F220FDBCE009AFA38 /* Tick.mp3 in Resources */,
 				682EC08C218EDB1000F74903 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

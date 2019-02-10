@@ -7,14 +7,12 @@
 //
 
 #import "SoundManager.h"
-#import <AVFoundation/AVFoundation.h>
 
 @interface SoundManager()
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;
 @end
 
 @implementation SoundManager
-
 + (instancetype)instance {
     static SoundManager *sharedSoundManager = nil;
     @synchronized (self) {
@@ -24,16 +22,18 @@
     }
     return sharedSoundManager;
 }
-
 + (void)setupAVAudioSession {
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryAmbient error:nil];
     [[AVAudioSession sharedInstance] setActive:YES error:nil];
 }
-
-+ (void)playSound:(NSString *)fileName {
-    NSURL* url = [NSBundle.mainBundle URLForResource:fileName withExtension:@"m4a"];
-    [SoundManager instance].audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url fileTypeHint:AVFileTypeAppleM4A error:nil];
++ (void)playSound:(NSString *)fileName fileExtension:(NSString *)extension fileTypeHint:(AVFileType)fileTypeHint{
+    NSURL* url = [NSBundle.mainBundle URLForResource:fileName withExtension:extension];
+    [SoundManager instance].audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url fileTypeHint:fileTypeHint error:nil];
     [[SoundManager instance].audioPlayer play];
 }
-
++ (void)tick {
+    NSURL* url = [NSBundle.mainBundle URLForResource:@"Tick" withExtension:@"mp3"];
+    [SoundManager instance].audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url fileTypeHint:AVFileTypeMPEGLayer3 error:nil];
+    [[SoundManager instance].audioPlayer play];
+}
 @end

@@ -75,6 +75,7 @@
     [SoundManager tick];
     [self animateButton:SHADOW_OFFSET_HEIGHT];
     self.isPressed = YES;
+    [self.delegate touchDownEventFromButton:self];
   }
 }
 
@@ -82,6 +83,7 @@
   if (self.isPressed) {
     [self animateButton:-SHADOW_OFFSET_HEIGHT];
     self.isPressed = NO;
+    [self.delegate touchUpEventFromButton:self];
   }
 }
 

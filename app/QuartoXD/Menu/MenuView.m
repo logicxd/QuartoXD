@@ -125,7 +125,7 @@
   self.versusButton.layer.cornerRadius = self.versusButton.bounds.size.height * 1/2.f;  
 }
 
-#pragma mark - Button Actions
+#pragma mark - Quarto Button Delegate
 
 - (void)performButtonActionWithButton:(QuartoButton *)button {
   if ([button isEqual:self.singlePlayerButton]) {
@@ -133,6 +133,14 @@
   } else if ([button isEqual:self.versusButton]) {
     [self.delegate buttonPressedVersus];
   }
+}
+
+- (void)touchDownEventFromButton:(QuartoButton *)button {
+  
+}
+
+- (void)touchUpEventFromButton:(QuartoButton *)button {
+  
 }
 
 #pragma mark -

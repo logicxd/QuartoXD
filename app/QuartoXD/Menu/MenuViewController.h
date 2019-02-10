@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MenuViewController : UIViewController <MenuViewDelegate>
 
-@property (nonatomic, strong) MenuView *view;
+@property (strong, nonatomic) MenuView *view;
 
 @end
 

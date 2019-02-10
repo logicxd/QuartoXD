@@ -9,7 +9,7 @@
 #import "SoundManager.h"
 
 @interface SoundManager()
-@property (nonatomic, strong) AVAudioPlayer *audioPlayer;
+@property (strong, nonatomic) AVAudioPlayer *audioPlayer;
 @end
 
 @implementation SoundManager

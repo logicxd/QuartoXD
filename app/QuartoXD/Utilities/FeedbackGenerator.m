@@ -18,7 +18,7 @@ static NSString * const kImpactHeavy = @"kImpactHeavy";
 static NSString * const kNotificationFeedback = @"kNotificationFeedback";
 
 @interface FeedbackGenerator()
-@property (nonatomic, strong) NSMutableDictionary *generators;
+@property (strong, nonatomic) NSMutableDictionary *generators;
 @end
 
 @implementation FeedbackGenerator

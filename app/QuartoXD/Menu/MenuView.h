@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface MenuView : UIView <QuartoButtonDelegate>
-@property (nonatomic, weak) id<MenuViewDelegate> delegate;
+@property (weak, nonatomic) id<MenuViewDelegate> delegate;
 @end
 
 NS_ASSUME_NONNULL_END

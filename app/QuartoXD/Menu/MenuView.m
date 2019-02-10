@@ -15,11 +15,11 @@
 #define BUTTON_LOAD_ANIMATION_DURATION 0.33
 
 @interface MenuView()
-@property (nonatomic, strong) UILabel *titleLabel;
-@property (nonatomic, strong) QuartoButton *singlePlayerButton;
-@property (nonatomic, strong) QuartoButton *versusButton;
+@property (strong, nonatomic) UILabel *titleLabel;
+@property (strong, nonatomic) QuartoButton *singlePlayerButton;
+@property (strong, nonatomic) QuartoButton *versusButton;
 
-@property (nonatomic, strong) UIDynamicAnimator *animator;
+@property (strong, nonatomic) UIDynamicAnimator *animator;
 @end
 
 @implementation MenuView {

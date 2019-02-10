@@ -17,7 +17,7 @@
 #define SHADOW_OFFSET_HEIGHT 2.5
 
 @interface QuartoButton()
-@property (nonatomic, assign) BOOL isPressed;
+@property (assign, nonatomic) BOOL isPressed;
 @end
 
 @implementation QuartoButton

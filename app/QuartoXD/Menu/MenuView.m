@@ -15,16 +15,14 @@
 #define BUTTON_LOAD_ANIMATION_DURATION 0.33
 
 @interface MenuView()
+@property (assign, nonatomic) BOOL didSetupConstraints;
 @property (strong, nonatomic) UILabel *titleLabel;
 @property (strong, nonatomic) QuartoButton *singlePlayerButton;
 @property (strong, nonatomic) QuartoButton *versusButton;
-
 @property (strong, nonatomic) UIDynamicAnimator *animator;
 @end
 
-@implementation MenuView {
-  BOOL _didSetupConstraints;
-}
+@implementation MenuView
 
 #pragma mark - Initialize View
 
@@ -37,7 +35,7 @@
 
 - (void)setup {
   // Set up properties of the view itself
-  _didSetupConstraints = NO;
+  self.didSetupConstraints = NO;
   self.translatesAutoresizingMaskIntoConstraints = NO;
   self.clipsToBounds = YES;
   self.backgroundColor = [UIColor quartoRed];
@@ -85,7 +83,7 @@
 }
 
 - (void)updateConstraints {
-  if (_didSetupConstraints) {
+  if (self.didSetupConstraints) {
     [super updateConstraints];
     return;
   }
@@ -94,7 +92,7 @@
   [self constraintSinglePlayerButton];
   [self constraintVersusButton];
   
-  _didSetupConstraints = YES;
+  self.didSetupConstraints = YES;
   [super updateConstraints];
 }
 

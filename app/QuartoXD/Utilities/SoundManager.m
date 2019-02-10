@@ -9,7 +9,6 @@
 #import "SoundManager.h"
 #import <AVFoundation/AVFoundation.h>
 
-
 @interface SoundManager()
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;
 @end
@@ -35,10 +34,6 @@
     NSURL* url = [NSBundle.mainBundle URLForResource:fileName withExtension:@"m4a"];
     [SoundManager instance].audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url fileTypeHint:AVFileTypeAppleM4A error:nil];
     [[SoundManager instance].audioPlayer play];
-}
-
-+ (void)peak {
-    AudioServicesPlaySystemSound(1519);
 }
 
 @end

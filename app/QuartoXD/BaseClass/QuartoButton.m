@@ -11,8 +11,8 @@
 #import "UIButton+QuartoButton.h"
 #import "UIFont+QuartoFont.h"
 #import "SoundManager.h"
-//#import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioToolbox.h>
+#import "FeedbackGenerator.h"
 
 @interface QuartoButton()
 @property (nonatomic, assign) BOOL isPressed;
@@ -56,8 +56,7 @@
 
 - (void)buttonPressedAnimation {
     if (!self.isPressed) {
-        [SoundManager peak];
-        
+        [FeedbackGenerator impactOccurredLight];
         [self quartoAnimateShadowOffsetBy:-[UIButton quartoShadowOffset].height completion:nil];
         [self transitionOnYAxisBy:[UIButton quartoShadowOffset].height completion:nil];
         self.isPressed = YES;

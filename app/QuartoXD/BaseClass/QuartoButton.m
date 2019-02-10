@@ -15,6 +15,7 @@
 #import "FeedbackGenerator.h"
 
 #define SHADOW_OFFSET_HEIGHT 2.5
+#define BUTTON_ANIMATION_DURATION 0.1
 
 @interface QuartoButton()
 @property (assign, nonatomic) BOOL isPressed;
@@ -81,7 +82,7 @@
 #pragma mark - Button Animation
 
 - (void)animateButton:(float)amount {
-  [UIView animateWithDuration:QUARTO_BUTTON_ANIMATION_DURATION delay:0 usingSpringWithDamping:0.2 initialSpringVelocity:2 options:UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionCurveLinear animations:^{
+  [UIView animateWithDuration:BUTTON_ANIMATION_DURATION delay:0 usingSpringWithDamping:0.2 initialSpringVelocity:2 options:UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionCurveLinear animations:^{
     CGRect frame = self.frame;
     frame.origin.y += amount;
     self.frame = frame;
@@ -89,7 +90,9 @@
     CGSize size = self.layer.shadowOffset;
     size.height -= amount;
     self.layer.shadowOffset = size;
-  } completion:nil];
+  } completion:^(BOOL finished) {
+   
+  }];
 }
 
 @end

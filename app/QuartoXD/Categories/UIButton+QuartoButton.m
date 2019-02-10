@@ -10,8 +10,8 @@
 
 @implementation UIButton (QuartoButton)
 
-- (void)animateOnYAxisBy:(float)amount completion:(void(^)(BOOL finished))completion {
-  [UIView animateWithDuration:QUARTO_BUTTON_ANIMATION_DURATION delay:0 usingSpringWithDamping:0.2 initialSpringVelocity:2 options:UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionCurveEaseOut animations:^{
+- (void)animateOnYAxisBy:(float)amount duration:(float)duration completion:(void(^)(BOOL finished))completion {
+  [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:0.2 initialSpringVelocity:2 options:UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionCurveEaseOut animations:^{
     CGRect frame = self.frame;
     frame.origin.y += amount;
     self.frame = frame;

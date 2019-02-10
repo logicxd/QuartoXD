@@ -8,10 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-#define QUARTO_BUTTON_ANIMATION_DURATION 0.1
-
 @interface UIButton (QuartoButton)
 
-- (void)animateOnYAxisBy:(float)amount completion:(nullable void(^)(BOOL finished))completion;
+- (void)animateOnYAxisBy:(float)amount duration:(float)duration completion:(nullable void(^)(BOOL finished))completion;
 
 @end

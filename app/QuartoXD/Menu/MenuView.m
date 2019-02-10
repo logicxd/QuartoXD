@@ -106,7 +106,7 @@
 
 - (void)constraintSinglePlayerButton {
   [self.singlePlayerButton.centerXAnchor constraintEqualToAnchor:self.centerXAnchor].active = YES;
-  [self.singlePlayerButton.topAnchor constraintEqualToAnchor:self.layoutMarginsGuide.bottomAnchor].active = YES;
+  [self.singlePlayerButton.topAnchor constraintEqualToAnchor:self.layoutMarginsGuide.bottomAnchor constant:-140].active = YES;
   [self.singlePlayerButton.leftAnchor constraintEqualToAnchor:self.layoutMarginsGuide.leftAnchor constant:25].active = YES;
   [self.singlePlayerButton.rightAnchor constraintEqualToAnchor:self.layoutMarginsGuide.rightAnchor constant:-25].active = YES;
   [self.singlePlayerButton.heightAnchor constraintEqualToConstant:50].active = YES;
@@ -114,7 +114,7 @@
 
 - (void)constraintVersusButton {
   [self.versusButton.centerXAnchor constraintEqualToAnchor:self.centerXAnchor].active = YES;
-  [self.versusButton.topAnchor constraintEqualToAnchor:self.layoutMarginsGuide.bottomAnchor constant:70].active = YES;
+  [self.versusButton.topAnchor constraintEqualToAnchor:self.layoutMarginsGuide.bottomAnchor constant:-70].active = YES;
   [self.versusButton.leftAnchor constraintEqualToAnchor:self.layoutMarginsGuide.leftAnchor constant:25].active = YES;
   [self.versusButton.rightAnchor constraintEqualToAnchor:self.layoutMarginsGuide.rightAnchor constant:-25].active = YES;
   [self.versusButton.heightAnchor constraintEqualToConstant:50].active = YES;
@@ -124,10 +124,7 @@
   [super layoutSubviews];
   
   self.singlePlayerButton.layer.cornerRadius = self.singlePlayerButton.bounds.size.height * 1/2.f;
-  self.versusButton.layer.cornerRadius = self.versusButton.bounds.size.height * 1/2.f;
-  
-  [self.singlePlayerButton transitionOnYAxisBy:-140 completion:nil];
-  [self.versusButton transitionOnYAxisBy:-140 completion:nil];
+  self.versusButton.layer.cornerRadius = self.versusButton.bounds.size.height * 1/2.f;  
 }
 
 #pragma mark - Button Actions

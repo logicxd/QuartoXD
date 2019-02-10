@@ -12,9 +12,6 @@
 
 @interface UIButton (QuartoButton)
 
-+ (CGSize)quartoShadowOffset;
-- (void)quartoAddShadow;
-- (void)quartoAnimateShadowOffsetBy:(float)amount completion:(nullable void(^)(BOOL finished))completion;
-- (void)transitionOnYAxisBy:(float)amount completion:(nullable void(^)(BOOL finished))completion;
+- (void)animateOnYAxisBy:(float)amount completion:(nullable void(^)(BOOL finished))completion;
 
 @end

@@ -14,6 +14,8 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import "FeedbackGenerator.h"
 
+#define SHADOW_OFFSET_HEIGHT 2.5
+
 @interface QuartoButton()
 @property (nonatomic, assign) BOOL isPressed;
 @end
@@ -28,7 +30,7 @@
     self.isPressed = NO;
     self.translatesAutoresizingMaskIntoConstraints = NO;
     self.backgroundColor = [UIColor quartoWhite];
-    [self quartoAddShadow];
+    [self addShadow];
     [self setTitle:title forState:UIControlStateNormal];
     [self setTitleColor:[UIColor quartoBlack] forState:UIControlStateNormal];
     [self addTarget:self action:@selector(buttonPerformAction) forControlEvents:UIControlEventTouchUpInside];
@@ -40,11 +42,17 @@
   return self;
 }
 
-#pragma mark - Layout Constraints
+#pragma mark - Layout
 
 - (void)layoutSubviews {
   [super layoutSubviews];
   self.layer.cornerRadius = self.frame.size.height / 2.f;
+}
+
+- (void)addShadow {
+  self.layer.shadowOpacity = 0.5f;
+  self.layer.shadowRadius = 1;
+  self.layer.shadowOffset = CGSizeMake(0, SHADOW_OFFSET_HEIGHT);
 }
 
 #pragma mark - Button Events
@@ -58,18 +66,30 @@
   if (!self.isPressed) {
     [FeedbackGenerator impactOccurredLight];
     [SoundManager tick];
-    [self quartoAnimateShadowOffsetBy:-[UIButton quartoShadowOffset].height completion:nil];
-    [self transitionOnYAxisBy:[UIButton quartoShadowOffset].height completion:nil];
+    [self animateButton:SHADOW_OFFSET_HEIGHT];
     self.isPressed = YES;
   }
 }
 
 - (void)buttonDepressedAnimation {
   if (self.isPressed) {
-    [self quartoAnimateShadowOffsetBy:[UIButton quartoShadowOffset].height completion:nil];
-    [self transitionOnYAxisBy:-[UIButton quartoShadowOffset].height completion:nil];
+    [self animateButton:-SHADOW_OFFSET_HEIGHT];
     self.isPressed = NO;
   }
+}
+
+#pragma mark - Button Animation
+
+- (void)animateButton:(float)amount {
+  [UIView animateWithDuration:QUARTO_BUTTON_ANIMATION_DURATION delay:0 usingSpringWithDamping:0.2 initialSpringVelocity:2 options:UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionCurveLinear animations:^{
+    CGRect frame = self.frame;
+    frame.origin.y += amount;
+    self.frame = frame;
+    
+    CGSize size = self.layer.shadowOffset;
+    size.height -= amount;
+    self.layer.shadowOffset = size;
+  } completion:nil];
 }
 
 @end

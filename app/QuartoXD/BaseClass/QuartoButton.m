@@ -14,11 +14,12 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import "FeedbackGenerator.h"
 
-#define SHADOW_OFFSET_HEIGHT 2.5
-#define BUTTON_ANIMATION_DURATION 0.1
+#define SHADOW_OFFSET_HEIGHT 2.7
+#define BUTTON_ANIMATION_DURATION 0.125
 
 @interface QuartoButton()
 @property (assign, nonatomic) BOOL isPressed;
+@property (assign, nonatomic) BOOL isAnimating;
 @end
 
 @implementation QuartoButton
@@ -59,8 +60,13 @@
 #pragma mark - Button Events
 
 - (void)buttonPerformAction {
-  [self buttonDepressedAnimation];
-  [self.delegate performButtonActionWithButton:self];
+  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0) , ^{
+    while (self.isAnimating) {}
+    dispatch_async(dispatch_get_main_queue(), ^{
+      [self buttonDepressedAnimation];
+      [self.delegate performButtonActionWithButton:self];
+    });
+  });
 }
 
 - (void)buttonPressedAnimation {
@@ -82,7 +88,8 @@
 #pragma mark - Button Animation
 
 - (void)animateButton:(float)amount {
-  [UIView animateWithDuration:BUTTON_ANIMATION_DURATION delay:0 usingSpringWithDamping:0.2 initialSpringVelocity:2 options:UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionCurveLinear animations:^{
+  self.isAnimating = YES;
+  [UIView animateWithDuration:BUTTON_ANIMATION_DURATION delay:0 options:UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionCurveLinear animations:^{
     CGRect frame = self.frame;
     frame.origin.y += amount;
     self.frame = frame;
@@ -91,7 +98,7 @@
     size.height -= amount;
     self.layer.shadowOffset = size;
   } completion:^(BOOL finished) {
-   
+    self.isAnimating = NO;
   }];
 }
 

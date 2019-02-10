@@ -88,12 +88,20 @@
     return;
   }
   
+  [self constraintSelf];
   [self constraintTitleLabel];
   [self constraintSinglePlayerButton];
   [self constraintVersusButton];
   
   self.didSetupConstraints = YES;
   [super updateConstraints];
+}
+
+- (void)constraintSelf {
+  [self.topAnchor constraintEqualToAnchor:self.superview.topAnchor].active = YES;
+  [self.leftAnchor constraintEqualToAnchor:self.superview.leftAnchor].active = YES;
+  [self.rightAnchor constraintEqualToAnchor:self.superview.rightAnchor].active = YES;
+  [self.bottomAnchor constraintEqualToAnchor:self.superview.bottomAnchor].active = YES;
 }
 
 - (void)constraintTitleLabel {

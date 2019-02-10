@@ -9,10 +9,13 @@
 #import "MenuViewController.h"
 #import "MenuView.h"
 #import "UIColor+QuartoColor.h"
+#import "QuartoBoardViewController.h"
 
 @implementation MenuViewController
 
 @dynamic view;
+
+#pragma mark - Lifecycle
 
 - (void)loadView {
   self.view = [[MenuView alloc] init];
@@ -23,12 +26,19 @@
   [super viewDidLoad];
 }
 
+#pragma mark - Layout Constraints
+
+#pragma mark - Button Delegates
+
 - (void)buttonPressedSinglePlayer {
-  
+  QuartoBoardViewController *vc = [[QuartoBoardViewController alloc] init];
+  [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)buttonPressedVersus {
   
 }
+
+#pragma mark -
 
 @end

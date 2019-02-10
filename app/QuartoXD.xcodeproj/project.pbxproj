@@ -20,6 +20,7 @@
 		D8B0F56021A951C1006F7600 /* UIButton+QuartoButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B0F55F21A951C1006F7600 /* UIButton+QuartoButton.m */; };
 		D8B7650D220FB288009AFA38 /* FeedbackGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B7650C220FB288009AFA38 /* FeedbackGenerator.m */; };
 		D8B7650F220FDBCE009AFA38 /* Tick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D8B7650E220FDBCE009AFA38 /* Tick.mp3 */; };
+		D8BB5A8E2210DF5D00527589 /* QuartoBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BB5A8D2210DF5D00527589 /* QuartoBoardViewController.m */; };
 		EF2A96C417EBCF75C2003586 /* Pods_QuartoXD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4D04211757E885067542CDB /* Pods_QuartoXD.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,8 @@
 		D8B7650B220FB288009AFA38 /* FeedbackGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedbackGenerator.h; sourceTree = "<group>"; };
 		D8B7650C220FB288009AFA38 /* FeedbackGenerator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedbackGenerator.m; sourceTree = "<group>"; };
 		D8B7650E220FDBCE009AFA38 /* Tick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Tick.mp3; sourceTree = "<group>"; };
+		D8BB5A8C2210DF5D00527589 /* QuartoBoardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuartoBoardViewController.h; sourceTree = "<group>"; };
+		D8BB5A8D2210DF5D00527589 /* QuartoBoardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuartoBoardViewController.m; sourceTree = "<group>"; };
 		F4A669C96886A70FB1CA6F8A /* Pods-QuartoXD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuartoXD.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuartoXD/Pods-QuartoXD.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -167,6 +170,8 @@
 			children = (
 				68F8EEBB22017436003CBC51 /* QuartoBoardView.h */,
 				68F8EEBC22017436003CBC51 /* QuartoBoardView.m */,
+				D8BB5A8C2210DF5D00527589 /* QuartoBoardViewController.h */,
+				D8BB5A8D2210DF5D00527589 /* QuartoBoardViewController.m */,
 			);
 			path = Board;
 			sourceTree = "<group>";
@@ -305,6 +310,7 @@
 				D8B0F56021A951C1006F7600 /* UIButton+QuartoButton.m in Sources */,
 				68F8EEBD22017436003CBC51 /* QuartoBoardView.m in Sources */,
 				682EC0A0218EDD0700F74903 /* MenuView.m in Sources */,
+				D8BB5A8E2210DF5D00527589 /* QuartoBoardViewController.m in Sources */,
 				D8B7650D220FB288009AFA38 /* FeedbackGenerator.m in Sources */,
 				682EC0A52190153900F74903 /* UIColor+QuartoColor.m in Sources */,
 				682EC09D218EDCCF00F74903 /* MenuViewController.m in Sources */,

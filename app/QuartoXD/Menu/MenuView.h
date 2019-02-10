@@ -7,12 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "../BaseClass/QuartoButton.h"
+#import "QuartoButton.h"
 
 NS_ASSUME_NONNULL_BEGIN
-
-// Forward declarations
-@class MenuView;
 
 @protocol MenuViewDelegate
 - (void)buttonPressedSinglePlayer;

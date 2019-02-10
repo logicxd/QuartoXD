@@ -13,27 +13,30 @@
 @end
 
 @implementation SoundManager
+
 + (instancetype)instance {
-    static SoundManager *sharedSoundManager = nil;
-    @synchronized (self) {
-        if (!sharedSoundManager) {
-            sharedSoundManager = [[self alloc] init];
-        }
+  static SoundManager *sharedSoundManager = nil;
+  @synchronized (self) {
+    if (!sharedSoundManager) {
+      sharedSoundManager = [[self alloc] init];
     }
-    return sharedSoundManager;
+  }
+  return sharedSoundManager;
 }
+
 + (void)setupAVAudioSession {
-    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryAmbient error:nil];
-    [[AVAudioSession sharedInstance] setActive:YES error:nil];
+  [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryAmbient error:nil];
+  [[AVAudioSession sharedInstance] setActive:YES error:nil];
 }
+
 + (void)playSound:(NSString *)fileName fileExtension:(NSString *)extension fileTypeHint:(AVFileType)fileTypeHint{
-    NSURL* url = [NSBundle.mainBundle URLForResource:fileName withExtension:extension];
-    [SoundManager instance].audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url fileTypeHint:fileTypeHint error:nil];
-    [[SoundManager instance].audioPlayer play];
+  NSURL* url = [NSBundle.mainBundle URLForResource:fileName withExtension:extension];
+  [SoundManager instance].audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url fileTypeHint:fileTypeHint error:nil];
+  [[SoundManager instance].audioPlayer play];
 }
+
 + (void)tick {
-    NSURL* url = [NSBundle.mainBundle URLForResource:@"Tick" withExtension:@"mp3"];
-    [SoundManager instance].audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url fileTypeHint:AVFileTypeMPEGLayer3 error:nil];
-    [[SoundManager instance].audioPlayer play];
+  [SoundManager playSound:@"Tick" fileExtension:@"mp3" fileTypeHint:AVFileTypeMPEGLayer3];
 }
+
 @end

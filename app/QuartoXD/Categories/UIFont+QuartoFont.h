@@ -13,7 +13,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIFont (QuartoFont)
 
 + (UIFont *) quartoTitle;
-
 + (UIFont *) quartoButtonMenu;
 
 @end

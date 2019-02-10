@@ -11,9 +11,10 @@
 #define QUARTO_BUTTON_ANIMATION_DURATION 0.1
 
 @interface UIButton (QuartoButton)
-+ (CGSize)quartoShadowOffset;
 
++ (CGSize)quartoShadowOffset;
 - (void)quartoAddShadow;
-- (void)quartoAnimateShadowOffsetBy:(float)amount completion:(void(^)(BOOL finished))completion;
-- (void)transitionOnYAxisBy:(float)amount completion:(void(^)(BOOL finished))completion;
+- (void)quartoAnimateShadowOffsetBy:(float)amount completion:(nullable void(^)(BOOL finished))completion;
+- (void)transitionOnYAxisBy:(float)amount completion:(nullable void(^)(BOOL finished))completion;
+
 @end

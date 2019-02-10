@@ -12,16 +12,22 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FeedbackGenerator : NSObject
 
-#pragma mark - Class Methods
+#pragma mark - Lifecycle
+
 + (void)reset;
+
 #pragma mark - Feedback Generator
+
 + (void)impactOccurredLight;
 + (void)impactOccurredMedium;
 + (void)impactOccurredHeavy;
+
 #pragma mark - Notification Generator
+
 + (void)notificationOccurredSuccess;
 + (void)notificationOccurredWarning;
 + (void)notificationOccurredError;
+
 #pragma mark -
 
 @end

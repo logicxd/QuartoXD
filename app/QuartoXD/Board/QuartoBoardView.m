@@ -10,11 +10,11 @@
 
 @implementation QuartoBoardView
 
--(instancetype)init {
-    if (self = [super init]) {
-        
-    }
-    return self;
+- (instancetype)init {
+  if (self = [super init]) {
+    
+  }
+  return self;
 }
 
 @end

@@ -20,58 +20,56 @@
 
 @implementation QuartoButton
 
-#pragma mark - Initialize Button
+#pragma mark - Life Cycle
 
 - (instancetype)initWithTitle:(NSString *)title {
-    self = [super init];
-    if (self) {
-        self.isPressed = NO;
-        self.translatesAutoresizingMaskIntoConstraints = NO;
-        self.backgroundColor = [UIColor quartoWhite];
-        [self quartoAddShadow];
-        [self setTitle:title forState:UIControlStateNormal];
-        [self setTitleColor:[UIColor quartoBlack] forState:UIControlStateNormal];
-        [self addTarget:self action:@selector(buttonPerformAction) forControlEvents:UIControlEventTouchUpInside];
-        [self addTarget:self action:@selector(buttonPressedAnimation) forControlEvents:UIControlEventTouchDown];
-        [self addTarget:self action:@selector(buttonDepressedAnimation) forControlEvents:UIControlEventTouchDragOutside];
-        
-        self.titleLabel.font = [UIFont quartoButtonMenu];
-    }
-    return self;
+  self = [super init];
+  if (self) {
+    self.isPressed = NO;
+    self.translatesAutoresizingMaskIntoConstraints = NO;
+    self.backgroundColor = [UIColor quartoWhite];
+    [self quartoAddShadow];
+    [self setTitle:title forState:UIControlStateNormal];
+    [self setTitleColor:[UIColor quartoBlack] forState:UIControlStateNormal];
+    [self addTarget:self action:@selector(buttonPerformAction) forControlEvents:UIControlEventTouchUpInside];
+    [self addTarget:self action:@selector(buttonPressedAnimation) forControlEvents:UIControlEventTouchDown];
+    [self addTarget:self action:@selector(buttonDepressedAnimation) forControlEvents:UIControlEventTouchDragOutside];
+    
+    self.titleLabel.font = [UIFont quartoButtonMenu];
+  }
+  return self;
 }
 
 #pragma mark - Layout Constraints
 
 - (void)layoutSubviews {
-    [super layoutSubviews];
-    self.layer.cornerRadius = self.frame.size.height / 2.f;
+  [super layoutSubviews];
+  self.layer.cornerRadius = self.frame.size.height / 2.f;
 }
 
 #pragma mark - Button Events
 
 - (void)buttonPerformAction {
-    [self buttonDepressedAnimation];
-    [self.delegate performButtonActionWithButton:self];
+  [self buttonDepressedAnimation];
+  [self.delegate performButtonActionWithButton:self];
 }
 
 - (void)buttonPressedAnimation {
-    if (!self.isPressed) {
-        [FeedbackGenerator impactOccurredLight];
-        [SoundManager tick];
-        [self quartoAnimateShadowOffsetBy:-[UIButton quartoShadowOffset].height completion:nil];
-        [self transitionOnYAxisBy:[UIButton quartoShadowOffset].height completion:nil];
-        self.isPressed = YES;
-    }
+  if (!self.isPressed) {
+    [FeedbackGenerator impactOccurredLight];
+    [SoundManager tick];
+    [self quartoAnimateShadowOffsetBy:-[UIButton quartoShadowOffset].height completion:nil];
+    [self transitionOnYAxisBy:[UIButton quartoShadowOffset].height completion:nil];
+    self.isPressed = YES;
+  }
 }
 
 - (void)buttonDepressedAnimation {
-    if (self.isPressed) {
-        [self quartoAnimateShadowOffsetBy:[UIButton quartoShadowOffset].height completion:nil];
-        [self transitionOnYAxisBy:-[UIButton quartoShadowOffset].height completion:nil];
-        self.isPressed = NO;
-    }
+  if (self.isPressed) {
+    [self quartoAnimateShadowOffsetBy:[UIButton quartoShadowOffset].height completion:nil];
+    [self transitionOnYAxisBy:-[UIButton quartoShadowOffset].height completion:nil];
+    self.isPressed = NO;
+  }
 }
-
-#pragma mark -
 
 @end

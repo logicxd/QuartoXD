@@ -10,30 +10,25 @@
 #import "MenuView.h"
 #import "UIColor+QuartoColor.h"
 
-@interface MenuViewController()
-
-@end
-
 @implementation MenuViewController
 
 @dynamic view;
 
 - (void)loadView {
-    self.view = [[MenuView alloc] init];
-    self.view.delegate = self;
+  self.view = [[MenuView alloc] init];
+  self.view.delegate = self;
 }
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+  [super viewDidLoad];
 }
 
 - (void)buttonPressedSinglePlayer {
-    
+  
 }
 
 - (void)buttonPressedVersus {
-    
+  
 }
 
 @end

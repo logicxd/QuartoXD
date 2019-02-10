@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+@class QuartoButton;
 
 NS_ASSUME_NONNULL_BEGIN
-
-@class QuartoButton;
 
 @protocol QuartoButtonDelegate <NSObject>
 - (void)performButtonActionWithButton:(QuartoButton *)button;
@@ -18,7 +17,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface QuartoButton : UIButton
 @property (nonatomic, weak) id<QuartoButtonDelegate> delegate;
-
 - (instancetype)initWithTitle:(NSString *)title;
 @end
 

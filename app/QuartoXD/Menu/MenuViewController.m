@@ -26,8 +26,6 @@
   [super viewDidLoad];
 }
 
-#pragma mark - Layout Constraints
-
 #pragma mark - Button Delegates
 
 - (void)buttonPressedSinglePlayer {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6807AD23224B470600964283 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6807AD22224B470600964283 /* BaseViewController.m */; };
 		682EC084218EDB0F00F74903 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 682EC083218EDB0F00F74903 /* AppDelegate.m */; };
 		682EC08C218EDB1000F74903 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 682EC08B218EDB1000F74903 /* Assets.xcassets */; };
 		682EC092218EDB1000F74903 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 682EC091218EDB1000F74903 /* main.m */; };
@@ -27,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6807AD21224B470600964283 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		6807AD22224B470600964283 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		682EC07F218EDB0F00F74903 /* QuartoXD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuartoXD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		682EC082218EDB0F00F74903 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		682EC083218EDB0F00F74903 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -98,7 +101,7 @@
 			children = (
 				682EC099218EDC6200F74903 /* Archive */,
 				68BA154921CA07B80048E29F /* Assets */,
-				684DC51921C63CFE008B5939 /* BaseClass */,
+				684DC51921C63CFE008B5939 /* Base */,
 				682EC0A2219014D600F74903 /* Categories */,
 				68BA154C21CA08FF0048E29F /* Utilities */,
 				68F8EEBA220173EB003CBC51 /* Board */,
@@ -142,7 +145,7 @@
 			path = Categories;
 			sourceTree = "<group>";
 		};
-		684DC51921C63CFE008B5939 /* BaseClass */ = {
+		684DC51921C63CFE008B5939 /* Base */ = {
 			isa = PBXGroup;
 			children = (
 				684DC51A21C63D47008B5939 /* QuartoButton.h */,
@@ -151,8 +154,10 @@
 				D8DDF4D622114D6800BE1C87 /* TransitionCoordinator.m */,
 				D8DDF4D822114F8600BE1C87 /* CircularTransition.h */,
 				D8DDF4D922114F8600BE1C87 /* CircularTransition.m */,
+				6807AD21224B470600964283 /* BaseViewController.h */,
+				6807AD22224B470600964283 /* BaseViewController.m */,
 			);
-			path = BaseClass;
+			path = Base;
 			sourceTree = "<group>";
 		};
 		68BA154921CA07B80048E29F /* Assets */ = {
@@ -316,6 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				682EC092218EDB1000F74903 /* main.m in Sources */,
+				6807AD23224B470600964283 /* BaseViewController.m in Sources */,
 				684DC51C21C63D47008B5939 /* QuartoButton.m in Sources */,
 				D8B0F56021A951C1006F7600 /* UIButton+QuartoButton.m in Sources */,
 				68F8EEBD22017436003CBC51 /* QuartoBoardView.m in Sources */,

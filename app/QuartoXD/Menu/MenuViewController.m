@@ -20,6 +20,7 @@
 - (void)loadView {
   self.view = [[MenuView alloc] init];
   self.view.delegate = self;
+  self.transitioningDelegate = self;
 }
 
 - (void)viewDidLoad {
@@ -35,6 +36,12 @@
 
 - (void)buttonPressedVersus {
   
+}
+
+#pragma mark - CircularTransitionable Delegate
+
+- (UIView *)mainView {
+  return self.view;
 }
 
 #pragma mark -

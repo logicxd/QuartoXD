@@ -12,15 +12,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol CircleTransitionable <NSObject>
-
-- (UIButton *)triggerButton;
-- (UITextView *)contentTextView;
 - (UIView *)mainView;
-
 @end
 
 @interface CircularTransition : NSObject <UIViewControllerAnimatedTransitioning>
-
 @end
 
 NS_ASSUME_NONNULL_END

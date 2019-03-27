@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import "MenuViewController.h"
 #import "SoundManager.h"
-#import "TransitionCoordinator.h"
 
 @interface AppDelegate ()
 
@@ -20,15 +19,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   MenuViewController *menuController = [[MenuViewController alloc] init];
-  UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:menuController];
-  TransitionCoordinator *transitionCoordinator = [[TransitionCoordinator alloc] init];
+  self.transitionCoordinator = [[TransitionCoordinator alloc] init];
   
+  UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:menuController];
   [nav setNavigationBarHidden:YES];
-  [nav setDelegate:transitionCoordinator];
+  [nav setDelegate:self.transitionCoordinator];
+  
   self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
   self.window.rootViewController = nav;
   [self.window makeKeyAndVisible];
+  
   [SoundManager setupAVAudioSession];
+  
   return YES;
 }
 @end

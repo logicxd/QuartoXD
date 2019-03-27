@@ -8,13 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "QuartoBoardView.h"
+#import "BaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface QuartoBoardViewController : UIViewController
-
+@interface QuartoBoardViewController : BaseViewController
 @property (strong, nonatomic) QuartoBoardView *view;
-
 @end
 
 NS_ASSUME_NONNULL_END

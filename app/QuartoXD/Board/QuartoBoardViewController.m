@@ -17,10 +17,19 @@
 
 - (void)loadView {
   self.view = [[QuartoBoardView alloc] init];
+  self.transitioningDelegate = self;
 }
 
 - (void)viewDidLoad {
   [super viewDidLoad];
 }
+
+#pragma mark - CircularTransitionable Delegate
+
+- (UIView *)mainView {
+  return self.view;
+}
+
+#pragma mark -
 
 @end

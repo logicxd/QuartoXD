@@ -34,7 +34,7 @@
   [containerView addSubview:snapshot];
   [fromVC.mainView removeFromSuperview];
   [containerView addSubview:backgroundView];
-  [self circularExpand:backgroundView];
+  [self circularExpand:backgroundView vc:toVC];
 }
 
 - (UIView *)backgroundViewOfVC:(BaseViewController *)toVC {
@@ -45,10 +45,18 @@
   return backgroundView;
 }
 
-- (void)circularExpand:(UIView *)view {
-  [UIView animateWithDuration:1 delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
-    [view setSize:CGSizeMake(1, 1)];
-    view.transform = CGAffineTransformMakeScale(2000.0, 2000.0);
+- (void)circularExpand:(UIView *)view vc:(BaseViewController *)vc {
+  CGFloat initialSize = 10;
+  [view setSize:CGSizeMake(initialSize, initialSize)];
+  view.layer.cornerRadius = initialSize/2;
+
+  [UIView animateWithDuration:0.75 delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+    CGSize vcSize = vc.view.frame.size;
+    CGFloat fullSize = vcSize.width > vcSize.height ? vcSize.width : vcSize.height;
+    CGFloat scale = fullSize / initialSize;
+    scale = scale * 1.3f;  // Screen corner doesn't get covered without this
+    
+    view.transform = CGAffineTransformMakeScale(scale, scale);
   } completion:nil];
 }
 

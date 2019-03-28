@@ -20,7 +20,6 @@
 - (void)loadView {
   self.view = [[MenuView alloc] init];
   self.view.delegate = self;
-  self.transitioningDelegate = self;
 }
 
 - (void)viewDidLoad {

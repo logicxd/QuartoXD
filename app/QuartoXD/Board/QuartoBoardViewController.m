@@ -17,7 +17,6 @@
 
 - (void)loadView {
   self.view = [[QuartoBoardView alloc] init];
-  self.transitioningDelegate = self;
 }
 
 - (void)viewDidLoad {

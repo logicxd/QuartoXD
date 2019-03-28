@@ -9,6 +9,7 @@
 #import "CircularTransition.h"
 #import "MenuViewController.h"
 #import "QuartoBoardViewController.h"
+#import "UIView+Resizable.h"
 
 @implementation CircularTransition
 
@@ -19,7 +20,7 @@
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext {
   BaseViewController *fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
   BaseViewController *toVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-  UIView *snapshot = [fromVC.view snapshotViewAfterScreenUpdates:NO];
+  UIView *snapshot = [fromVC.mainView snapshotViewAfterScreenUpdates:NO];
   
   if (!fromVC || !toVC ||!snapshot) {
     [transitionContext completeTransition:NO];
@@ -27,16 +28,27 @@
   }
   
   UIView *containerView = transitionContext.containerView;
+  
+  UIView *backgroundView = [self backgroundViewOfVC:toVC];
+  
   [containerView addSubview:snapshot];
   [fromVC.mainView removeFromSuperview];
-  [self animateOffscreen:snapshot];
+  [containerView addSubview:backgroundView];
+  [self circularExpand:backgroundView];
 }
 
-#pragma mark - Helper animation
+- (UIView *)backgroundViewOfVC:(BaseViewController *)toVC {
+  UIView *backgroundView = [[UIView alloc] init];
+  backgroundView.frame = CGRectZero;
+  backgroundView.center = toVC.mainView.center;
+  backgroundView.backgroundColor = toVC.mainView.backgroundColor;
+  return backgroundView;
+}
 
-- (void)animateOffscreen:(UIView *)fromView {
-  [UIView animateWithDuration:3 delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
-    fromView.transform = CGAffineTransformMakeScale(5.0, 5.0);
+- (void)circularExpand:(UIView *)view {
+  [UIView animateWithDuration:1 delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+    [view setSize:CGSizeMake(1, 1)];
+    view.transform = CGAffineTransformMakeScale(2000.0, 2000.0);
   } completion:nil];
 }
 

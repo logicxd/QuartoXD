@@ -29,14 +29,14 @@
   [[AVAudioSession sharedInstance] setActive:YES error:nil];
 }
 
++ (void)tick {
+  [SoundManager playSound:@"Tick" fileExtension:@"mp3" fileTypeHint:AVFileTypeMPEGLayer3];
+}
+
 + (void)playSound:(NSString *)fileName fileExtension:(NSString *)extension fileTypeHint:(AVFileType)fileTypeHint{
   NSURL* url = [NSBundle.mainBundle URLForResource:fileName withExtension:extension];
   [SoundManager instance].audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url fileTypeHint:fileTypeHint error:nil];
   [[SoundManager instance].audioPlayer play];
-}
-
-+ (void)tick {
-  [SoundManager playSound:@"Tick" fileExtension:@"mp3" fileTypeHint:AVFileTypeMPEGLayer3];
 }
 
 @end

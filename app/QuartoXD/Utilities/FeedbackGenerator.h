@@ -28,8 +28,6 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)notificationOccurredWarning;
 + (void)notificationOccurredError;
 
-#pragma mark -
-
 @end
 
 NS_ASSUME_NONNULL_END

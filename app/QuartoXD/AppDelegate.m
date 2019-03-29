@@ -11,11 +11,9 @@
 #import "SoundManager.h"
 
 @interface AppDelegate ()
-
 @end
 
 @implementation AppDelegate
-
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   MenuViewController *menuController = [[MenuViewController alloc] init];

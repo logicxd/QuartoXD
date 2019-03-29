@@ -10,7 +10,9 @@
 #import "TransitionCoordinator.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
+
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) TransitionCoordinator *transitionCoordinator;
+
 @end
 

@@ -11,11 +11,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SoundManager : NSObject
-
 + (void)setupAVAudioSession;
-+ (void)playSound:(NSString *)fileName fileExtension:(NSString *)extension fileTypeHint:(AVFileType)fileTypeHint;
 + (void)tick;
-
++ (void)playSound:(NSString *)fileName fileExtension:(NSString *)extension fileTypeHint:(AVFileType)fileTypeHint;
 @end
 
 NS_ASSUME_NONNULL_END

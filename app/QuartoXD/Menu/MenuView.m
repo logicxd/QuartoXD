@@ -15,11 +15,13 @@
 #define BUTTON_LOAD_ANIMATION_DURATION 0.33
 
 @interface MenuView()
+
 @property (assign, nonatomic) BOOL didSetupConstraints;
 @property (strong, nonatomic) UILabel *titleLabel;
 @property (strong, nonatomic) QuartoButton *singlePlayerButton;
 @property (strong, nonatomic) QuartoButton *versusButton;
 @property (strong, nonatomic) UIDynamicAnimator *animator;
+
 @end
 
 @implementation MenuView
@@ -142,16 +144,6 @@
     [self.delegate buttonPressedVersus];
   }
 }
-
-- (void)touchDownEventFromButton:(QuartoButton *)button {
-  
-}
-
-- (void)touchUpEventFromButton:(QuartoButton *)button {
-  
-}
-
-#pragma mark -
 
 @end
 

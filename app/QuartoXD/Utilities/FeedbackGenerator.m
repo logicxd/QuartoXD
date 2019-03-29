@@ -98,6 +98,4 @@ static NSString * const kNotificationFeedback = @"kNotificationFeedback";
   [feedback notificationOccurred:UINotificationFeedbackTypeError];
 }
 
-#pragma mark -
-
 @end

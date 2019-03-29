@@ -12,8 +12,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol MenuViewDelegate
+
 - (void)buttonPressedSinglePlayer;
 - (void)buttonPressedVersus;
+
 @end
 
 @interface MenuView : UIView <QuartoButtonDelegate>

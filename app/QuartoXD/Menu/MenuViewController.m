@@ -29,12 +29,8 @@
 #pragma mark - Button Delegates
 
 - (void)buttonPressedSinglePlayer {
-  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.15 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-    dispatch_async(dispatch_get_main_queue(), ^{
-      QuartoBoardViewController *vc = [[QuartoBoardViewController alloc] init];
-      [self.navigationController pushViewController:vc animated:YES];
-    });
-  });
+  QuartoBoardViewController *vc = [[QuartoBoardViewController alloc] init];
+  [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)buttonPressedVersus {

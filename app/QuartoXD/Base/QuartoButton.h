@@ -13,8 +13,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol QuartoButtonDelegate <NSObject>
 - (void)performButtonActionWithButton:(QuartoButton *)button;
-- (void)touchDownEventFromButton:(QuartoButton *)button;
-- (void)touchUpEventFromButton:(QuartoButton *)button;
 @end
 
 @interface QuartoButton : UIButton

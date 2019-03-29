@@ -15,7 +15,7 @@
 #import "FeedbackGenerator.h"
 
 #define SHADOW_OFFSET_HEIGHT 2.7
-#define BUTTON_ANIMATION_DURATION 0.125
+#define ANIMATION_DURATION 0.125
 
 @interface QuartoButton()
 @property (assign, nonatomic) BOOL isPressed;
@@ -29,17 +29,16 @@
 - (instancetype)initWithTitle:(NSString *)title {
   self = [super init];
   if (self) {
-    self.isPressed = NO;
-    self.translatesAutoresizingMaskIntoConstraints = NO;
-    self.backgroundColor = [UIColor quartoWhite];
     [self addShadow];
     [self setTitle:title forState:UIControlStateNormal];
     [self setTitleColor:[UIColor quartoBlack] forState:UIControlStateNormal];
+    [self setBackgroundColor:[UIColor quartoWhite]];
+    [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self addTarget:self action:@selector(buttonPerformAction) forControlEvents:UIControlEventTouchUpInside];
     [self addTarget:self action:@selector(buttonPressedAnimation) forControlEvents:UIControlEventTouchDown];
     [self addTarget:self action:@selector(buttonDepressedAnimation) forControlEvents:UIControlEventTouchDragOutside];
     
-    self.titleLabel.font = [UIFont quartoButtonMenu];
+    [self.titleLabel setFont:[UIFont quartoButtonMenu]];
   }
   return self;
 }
@@ -61,47 +60,54 @@
 
 - (void)buttonPerformAction {
   dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0) , ^{
-    while (self.isAnimating) {}
+    while (self.isAnimating);
     dispatch_async(dispatch_get_main_queue(), ^{
       [self buttonDepressedAnimation];
-      [self.delegate performButtonActionWithButton:self];
+      dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(ANIMATION_DURATION * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.delegate performButtonActionWithButton:self];
+      });
     });
   });
 }
 
 - (void)buttonPressedAnimation {
   if (!self.isPressed) {
-    [FeedbackGenerator impactOccurredLight];
     [SoundManager tick];
+    [FeedbackGenerator impactOccurredLight];
     [self animateButton:SHADOW_OFFSET_HEIGHT];
-    self.isPressed = YES;
-    [self.delegate touchDownEventFromButton:self];
+    [self setIsPressed:YES];
   }
 }
 
 - (void)buttonDepressedAnimation {
   if (self.isPressed) {
     [self animateButton:-SHADOW_OFFSET_HEIGHT];
-    self.isPressed = NO;
-    [self.delegate touchUpEventFromButton:self];
+    [self setIsPressed:NO];
   }
 }
 
 #pragma mark - Button Animation
 
 - (void)animateButton:(float)amount {
-  self.isAnimating = YES;
-  [UIView animateWithDuration:BUTTON_ANIMATION_DURATION delay:0 options:UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionCurveLinear animations:^{
-    CGRect frame = self.frame;
-    frame.origin.y += amount;
-    self.frame = frame;
-    
-    CGSize size = self.layer.shadowOffset;
-    size.height -= amount;
-    self.layer.shadowOffset = size;
+  [self setIsAnimating:YES];
+  [UIView animateWithDuration:ANIMATION_DURATION delay:0 options:UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionCurveLinear animations:^{
+    [self moveFrameOriginYByAmount:amount];
+    [self moveShadowHeightByAmount:amount];
   } completion:^(BOOL finished) {
-    self.isAnimating = NO;
+    [self setIsAnimating:NO];
   }];
+}
+
+- (void)moveFrameOriginYByAmount:(float)amount {
+  CGRect frame = self.frame;
+  frame.origin.y += amount;
+  self.frame = frame;
+}
+
+- (void)moveShadowHeightByAmount:(float)amount {
+  CGSize size = self.layer.shadowOffset;
+  size.height -= amount;
+  self.layer.shadowOffset = size;
 }
 
 @end

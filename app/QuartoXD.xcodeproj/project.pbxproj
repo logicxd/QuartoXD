@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6807AD23224B470600964283 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6807AD22224B470600964283 /* BaseViewController.m */; };
+		681FB1C22255E7480017051F /* CustomIOSAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 681FB1C12255E7480017051F /* CustomIOSAlertView.m */; };
 		682EC084218EDB0F00F74903 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 682EC083218EDB0F00F74903 /* AppDelegate.m */; };
 		682EC08C218EDB1000F74903 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 682EC08B218EDB1000F74903 /* Assets.xcassets */; };
 		682EC092218EDB1000F74903 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 682EC091218EDB1000F74903 /* main.m */; };
@@ -30,6 +31,8 @@
 /* Begin PBXFileReference section */
 		6807AD21224B470600964283 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		6807AD22224B470600964283 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		681FB1C02255E7470017051F /* CustomIOSAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomIOSAlertView.h; sourceTree = "<group>"; };
+		681FB1C12255E7480017051F /* CustomIOSAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomIOSAlertView.m; sourceTree = "<group>"; };
 		682EC07F218EDB0F00F74903 /* QuartoXD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuartoXD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		682EC082218EDB0F00F74903 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		682EC083218EDB0F00F74903 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -76,9 +79,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		681FB1BE2255E7080017051F /* ThirdPartyLibs */ = {
+			isa = PBXGroup;
+			children = (
+				681FB1BF2255E7160017051F /* CustomIOSAlertView */,
+			);
+			path = ThirdPartyLibs;
+			sourceTree = "<group>";
+		};
+		681FB1BF2255E7160017051F /* CustomIOSAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				681FB1C02255E7470017051F /* CustomIOSAlertView.h */,
+				681FB1C12255E7480017051F /* CustomIOSAlertView.m */,
+			);
+			path = CustomIOSAlertView;
+			sourceTree = "<group>";
+		};
+		681FB1C32255E8B30017051F /* App Areas */ = {
+			isa = PBXGroup;
+			children = (
+				68F8EEBA220173EB003CBC51 /* Board */,
+				682EC098218EDC1400F74903 /* Menu */,
+			);
+			path = "App Areas";
+			sourceTree = "<group>";
+		};
 		682EC076218EDB0F00F74903 = {
 			isa = PBXGroup;
 			children = (
+				681FB1BE2255E7080017051F /* ThirdPartyLibs */,
 				682EC081218EDB0F00F74903 /* QuartoXD */,
 				682EC080218EDB0F00F74903 /* Products */,
 			);
@@ -95,13 +125,12 @@
 		682EC081218EDB0F00F74903 /* QuartoXD */ = {
 			isa = PBXGroup;
 			children = (
+				681FB1C32255E8B30017051F /* App Areas */,
 				682EC099218EDC6200F74903 /* Archive */,
 				68BA154921CA07B80048E29F /* Assets */,
-				684DC51921C63CFE008B5939 /* Base */,
+				684DC51921C63CFE008B5939 /* Base Class */,
 				682EC0A2219014D600F74903 /* Categories */,
 				68BA154C21CA08FF0048E29F /* Utilities */,
-				68F8EEBA220173EB003CBC51 /* Board */,
-				682EC098218EDC1400F74903 /* Menu */,
 				682EC082218EDB0F00F74903 /* AppDelegate.h */,
 				682EC083218EDB0F00F74903 /* AppDelegate.m */,
 			);
@@ -143,7 +172,7 @@
 			path = Categories;
 			sourceTree = "<group>";
 		};
-		684DC51921C63CFE008B5939 /* Base */ = {
+		684DC51921C63CFE008B5939 /* Base Class */ = {
 			isa = PBXGroup;
 			children = (
 				684DC51A21C63D47008B5939 /* QuartoButton.h */,
@@ -155,7 +184,7 @@
 				6807AD21224B470600964283 /* BaseViewController.h */,
 				6807AD22224B470600964283 /* BaseViewController.m */,
 			);
-			path = Base;
+			path = "Base Class";
 			sourceTree = "<group>";
 		};
 		68BA154921CA07B80048E29F /* Assets */ = {
@@ -259,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				682EC092218EDB1000F74903 /* main.m in Sources */,
+				681FB1C22255E7480017051F /* CustomIOSAlertView.m in Sources */,
 				6807AD23224B470600964283 /* BaseViewController.m in Sources */,
 				68F4AE34224C5718002DB17E /* UIView+Resizable.m in Sources */,
 				684DC51C21C63D47008B5939 /* QuartoButton.m in Sources */,

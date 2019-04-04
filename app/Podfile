@@ -2,7 +2,7 @@ platform :ios, '11.0'
 use_frameworks!
 
 target 'QuartoXD' do
-        pod 'Shimmer'
-        pod 'CustomIOSAlertView'
+        # pod 'Shimmer'
+        # pod 'CustomIOSAlertView'
 end
 

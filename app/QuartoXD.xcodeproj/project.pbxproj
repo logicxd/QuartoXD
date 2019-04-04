@@ -25,7 +25,6 @@
 		D8BB5A8E2210DF5D00527589 /* QuartoBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BB5A8D2210DF5D00527589 /* QuartoBoardViewController.m */; };
 		D8DDF4D722114D6800BE1C87 /* TransitionCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = D8DDF4D622114D6800BE1C87 /* TransitionCoordinator.m */; };
 		D8DDF4DA22114F8600BE1C87 /* CircularTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = D8DDF4D922114F8600BE1C87 /* CircularTransition.m */; };
-		EF2A96C417EBCF75C2003586 /* Pods_QuartoXD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4D04211757E885067542CDB /* Pods_QuartoXD.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,8 +52,6 @@
 		68F4AE33224C5718002DB17E /* UIView+Resizable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Resizable.m"; sourceTree = "<group>"; };
 		68F8EEBB22017436003CBC51 /* QuartoBoardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuartoBoardView.h; sourceTree = "<group>"; };
 		68F8EEBC22017436003CBC51 /* QuartoBoardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuartoBoardView.m; sourceTree = "<group>"; };
-		88A34C3014394B0953805F1B /* Pods-QuartoXD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuartoXD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QuartoXD/Pods-QuartoXD.debug.xcconfig"; sourceTree = "<group>"; };
-		C4D04211757E885067542CDB /* Pods_QuartoXD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuartoXD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8B0F55E21A951C1006F7600 /* UIButton+QuartoButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+QuartoButton.h"; sourceTree = "<group>"; };
 		D8B0F55F21A951C1006F7600 /* UIButton+QuartoButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+QuartoButton.m"; sourceTree = "<group>"; };
 		D8B7650B220FB288009AFA38 /* FeedbackGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedbackGenerator.h; sourceTree = "<group>"; };
@@ -66,7 +63,6 @@
 		D8DDF4D622114D6800BE1C87 /* TransitionCoordinator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransitionCoordinator.m; sourceTree = "<group>"; };
 		D8DDF4D822114F8600BE1C87 /* CircularTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircularTransition.h; sourceTree = "<group>"; };
 		D8DDF4D922114F8600BE1C87 /* CircularTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircularTransition.m; sourceTree = "<group>"; };
-		F4A669C96886A70FB1CA6F8A /* Pods-QuartoXD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuartoXD.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuartoXD/Pods-QuartoXD.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +70,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF2A96C417EBCF75C2003586 /* Pods_QuartoXD.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,8 +81,6 @@
 			children = (
 				682EC081218EDB0F00F74903 /* QuartoXD */,
 				682EC080218EDB0F00F74903 /* Products */,
-				9AD73B63A6DBE005DDB84720 /* Pods */,
-				BE1DC806BEB03F16BDFA04C8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -196,23 +189,6 @@
 			path = Board;
 			sourceTree = "<group>";
 		};
-		9AD73B63A6DBE005DDB84720 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				88A34C3014394B0953805F1B /* Pods-QuartoXD.debug.xcconfig */,
-				F4A669C96886A70FB1CA6F8A /* Pods-QuartoXD.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		BE1DC806BEB03F16BDFA04C8 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				C4D04211757E885067542CDB /* Pods_QuartoXD.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -220,11 +196,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 682EC095218EDB1000F74903 /* Build configuration list for PBXNativeTarget "QuartoXD" */;
 			buildPhases = (
-				EBD607802A134D37F0F89AE2 /* [CP] Check Pods Manifest.lock */,
 				682EC07B218EDB0F00F74903 /* Sources */,
 				682EC07C218EDB0F00F74903 /* Frameworks */,
 				682EC07D218EDB0F00F74903 /* Resources */,
-				E0C3AE8087FF8957AE68C4BD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -278,47 +252,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		E0C3AE8087FF8957AE68C4BD /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-QuartoXD/Pods-QuartoXD-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/CustomIOSAlertView/CustomIOSAlertView.framework",
-				"${BUILT_PRODUCTS_DIR}/Shimmer/Shimmer.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CustomIOSAlertView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Shimmer.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QuartoXD/Pods-QuartoXD-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EBD607802A134D37F0F89AE2 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-QuartoXD-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		682EC07B218EDB0F00F74903 /* Sources */ = {
@@ -461,7 +394,6 @@
 		};
 		682EC096218EDB1000F74903 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 88A34C3014394B0953805F1B /* Pods-QuartoXD.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -481,7 +413,6 @@
 		};
 		682EC097218EDB1000F74903 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F4A669C96886A70FB1CA6F8A /* Pods-QuartoXD.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

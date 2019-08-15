@@ -16,10 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface QuartoButton : UIButton
-
 @property (weak, nonatomic) id<QuartoButtonDelegate> delegate;
 - (instancetype)initWithTitle:(NSString *)title;
-
 @end
 
 NS_ASSUME_NONNULL_END

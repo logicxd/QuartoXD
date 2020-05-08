@@ -96,20 +96,12 @@
 			path = CustomIOSAlertView;
 			sourceTree = "<group>";
 		};
-		681FB1C32255E8B30017051F /* App Areas */ = {
-			isa = PBXGroup;
-			children = (
-				68F8EEBA220173EB003CBC51 /* Board */,
-				682EC098218EDC1400F74903 /* Menu */,
-			);
-			path = "App Areas";
-			sourceTree = "<group>";
-		};
 		682EC076218EDB0F00F74903 = {
 			isa = PBXGroup;
 			children = (
-				681FB1BE2255E7080017051F /* ThirdPartyLibs */,
 				682EC081218EDB0F00F74903 /* QuartoXD */,
+				68A1F7EB2465EDEC006BE4D9 /* QuartoXD Tests */,
+				681FB1BE2255E7080017051F /* ThirdPartyLibs */,
 				682EC080218EDB0F00F74903 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -125,14 +117,13 @@
 		682EC081218EDB0F00F74903 /* QuartoXD */ = {
 			isa = PBXGroup;
 			children = (
-				681FB1C32255E8B30017051F /* App Areas */,
-				682EC099218EDC6200F74903 /* Archive */,
-				68BA154921CA07B80048E29F /* Assets */,
-				684DC51921C63CFE008B5939 /* Base Class */,
 				682EC0A2219014D600F74903 /* Categories */,
+				68A1F7E52465E975006BE4D9 /* Controller */,
+				68A1F7E42465E970006BE4D9 /* Model */,
+				68BA154921CA07B80048E29F /* Resources */,
+				682EC099218EDC6200F74903 /* Supporting Files */,
 				68BA154C21CA08FF0048E29F /* Utilities */,
-				682EC082218EDB0F00F74903 /* AppDelegate.h */,
-				682EC083218EDB0F00F74903 /* AppDelegate.m */,
+				68A1F7E62465E97A006BE4D9 /* View */,
 			);
 			path = QuartoXD;
 			sourceTree = "<group>";
@@ -142,19 +133,19 @@
 			children = (
 				682EC09B218EDCCF00F74903 /* MenuViewController.h */,
 				682EC09C218EDCCF00F74903 /* MenuViewController.m */,
-				682EC09E218EDD0700F74903 /* MenuView.h */,
-				682EC09F218EDD0700F74903 /* MenuView.m */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
 		};
-		682EC099218EDC6200F74903 /* Archive */ = {
+		682EC099218EDC6200F74903 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				682EC091218EDB1000F74903 /* main.m */,
+				682EC082218EDB0F00F74903 /* AppDelegate.h */,
+				682EC083218EDB0F00F74903 /* AppDelegate.m */,
 				682EC090218EDB1000F74903 /* Info.plist */,
+				682EC091218EDB1000F74903 /* main.m */,
 			);
-			path = Archive;
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		682EC0A2219014D600F74903 /* Categories */ = {
@@ -172,37 +163,104 @@
 			path = Categories;
 			sourceTree = "<group>";
 		};
-		684DC51921C63CFE008B5939 /* Base Class */ = {
+		68A1F7E32465E643006BE4D9 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				684DC51A21C63D47008B5939 /* QuartoButton.h */,
-				684DC51B21C63D47008B5939 /* QuartoButton.m */,
+				D8B7650E220FDBCE009AFA38 /* Tick.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		68A1F7E42465E970006BE4D9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		68A1F7E52465E975006BE4D9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				68A1F7E92465EC7A006BE4D9 /* Base */,
+				68F8EEBA220173EB003CBC51 /* Board */,
+				682EC098218EDC1400F74903 /* Menu */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		68A1F7E62465E97A006BE4D9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				68A1F7EA2465EDA6006BE4D9 /* Common */,
+				68A1F7E72465EAFB006BE4D9 /* Board */,
+				68A1F7E82465EB0A006BE4D9 /* Menu */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		68A1F7E72465EAFB006BE4D9 /* Board */ = {
+			isa = PBXGroup;
+			children = (
+				68F8EEBB22017436003CBC51 /* QuartoBoardView.h */,
+				68F8EEBC22017436003CBC51 /* QuartoBoardView.m */,
+			);
+			path = Board;
+			sourceTree = "<group>";
+		};
+		68A1F7E82465EB0A006BE4D9 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				682EC09E218EDD0700F74903 /* MenuView.h */,
+				682EC09F218EDD0700F74903 /* MenuView.m */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		68A1F7E92465EC7A006BE4D9 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				6807AD21224B470600964283 /* BaseViewController.h */,
+				6807AD22224B470600964283 /* BaseViewController.m */,
 				D8DDF4D522114D6800BE1C87 /* TransitionCoordinator.h */,
 				D8DDF4D622114D6800BE1C87 /* TransitionCoordinator.m */,
 				D8DDF4D822114F8600BE1C87 /* CircularTransition.h */,
 				D8DDF4D922114F8600BE1C87 /* CircularTransition.m */,
-				6807AD21224B470600964283 /* BaseViewController.h */,
-				6807AD22224B470600964283 /* BaseViewController.m */,
 			);
-			path = "Base Class";
+			path = Base;
 			sourceTree = "<group>";
 		};
-		68BA154921CA07B80048E29F /* Assets */ = {
+		68A1F7EA2465EDA6006BE4D9 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				684DC51A21C63D47008B5939 /* QuartoButton.h */,
+				684DC51B21C63D47008B5939 /* QuartoButton.m */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		68A1F7EB2465EDEC006BE4D9 /* QuartoXD Tests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "QuartoXD Tests";
+			sourceTree = "<group>";
+		};
+		68BA154921CA07B80048E29F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				682EC08B218EDB1000F74903 /* Assets.xcassets */,
-				D8B7650E220FDBCE009AFA38 /* Tick.mp3 */,
+				68A1F7E32465E643006BE4D9 /* Sounds */,
 			);
-			path = Assets;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		68BA154C21CA08FF0048E29F /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				68BA154D21CA09640048E29F /* SoundManager.h */,
-				68BA154E21CA09640048E29F /* SoundManager.m */,
 				D8B7650B220FB288009AFA38 /* FeedbackGenerator.h */,
 				D8B7650C220FB288009AFA38 /* FeedbackGenerator.m */,
+				68BA154D21CA09640048E29F /* SoundManager.h */,
+				68BA154E21CA09640048E29F /* SoundManager.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -210,8 +268,6 @@
 		68F8EEBA220173EB003CBC51 /* Board */ = {
 			isa = PBXGroup;
 			children = (
-				68F8EEBB22017436003CBC51 /* QuartoBoardView.h */,
-				68F8EEBC22017436003CBC51 /* QuartoBoardView.m */,
 				D8BB5A8C2210DF5D00527589 /* QuartoBoardViewController.h */,
 				D8BB5A8D2210DF5D00527589 /* QuartoBoardViewController.m */,
 			);
@@ -428,7 +484,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CQ47S6V855;
-				INFOPLIST_FILE = QuartoXD/Archive/Info.plist;
+				INFOPLIST_FILE = "QuartoXD/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -447,7 +503,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CQ47S6V855;
-				INFOPLIST_FILE = QuartoXD/Archive/Info.plist;
+				INFOPLIST_FILE = "QuartoXD/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

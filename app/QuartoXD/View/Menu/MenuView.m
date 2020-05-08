@@ -9,8 +9,6 @@
 #import "MenuView.h"
 #import "UIColor+QuartoColor.h"
 #import "UIFont+QuartoFont.h"
-#import "UIButton+QuartoButton.h"
-#import "QuartoButton.h"
 
 #define BUTTON_LOAD_ANIMATION_DURATION 0.33
 

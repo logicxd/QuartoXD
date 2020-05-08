@@ -47,6 +47,7 @@
 		682EC0A42190153900F74903 /* UIColor+QuartoColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+QuartoColor.m"; sourceTree = "<group>"; };
 		684DC51A21C63D47008B5939 /* QuartoButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuartoButton.h; sourceTree = "<group>"; };
 		684DC51B21C63D47008B5939 /* QuartoButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuartoButton.m; sourceTree = "<group>"; };
+		68A1F7EC2465F09F006BE4D9 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		68BA154D21CA09640048E29F /* SoundManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoundManager.h; sourceTree = "<group>"; };
 		68BA154E21CA09640048E29F /* SoundManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SoundManager.m; sourceTree = "<group>"; };
 		68C7551B2197B3A500F034B3 /* UIFont+QuartoFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIFont+QuartoFont.h"; sourceTree = "<group>"; };
@@ -144,6 +145,7 @@
 				682EC083218EDB0F00F74903 /* AppDelegate.m */,
 				682EC090218EDB1000F74903 /* Info.plist */,
 				682EC091218EDB1000F74903 /* main.m */,
+				68A1F7EC2465F09F006BE4D9 /* PrefixHeader.pch */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -407,6 +409,8 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/$(PROJECT_NAME)/Supporting Files/PrefixHeader.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -464,6 +468,8 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/$(PROJECT_NAME)/Supporting Files/PrefixHeader.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
